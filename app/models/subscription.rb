@@ -1,5 +1,4 @@
 class Subscription < ApplicationRecord
-  has_many :users
-
-  belong_to :users
+  belongs_to :parkactivity
+  belongs_to :users
 end
