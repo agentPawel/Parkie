@@ -58,10 +58,14 @@ ActiveRecord::Schema.define(version: 20170227202215) do
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
+    t.string   "email",            null: false
     t.integer  "cell"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
