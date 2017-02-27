@@ -1,0 +1,2 @@
+class ParkActivity < ApplicationRecord
+end
