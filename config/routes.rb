@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :user_sessions, only: [:new, :create, :destroy]
 
-  root :to => 'users#index'
+  # root :to => 'http://localhost:3000'
   resources :user_sessions
   resources :users
 
