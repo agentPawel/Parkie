@@ -13,6 +13,12 @@ class ParksController < ApplicationController
 
   def create
     @park = Park.new(park_params)
+    if @park.save
+      redirect_to "http://localhost:3000"
+    else
+      render :index
+    end
+  end
   end
 
   private
