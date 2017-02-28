@@ -4,6 +4,20 @@ class ParksController < ApplicationController
   end
 
   def show
-    @parks = Park.find(params[:id])
+    @park = Park.find(params[:id])
   end
+
+  def new
+    @park = Park.new
+  end
+
+  def create
+    @park = Park.new(park_params)
+  end
+
+  private
+  def park_params
+    params.require(:park).permit(:name, :address)
+  end
+
 end

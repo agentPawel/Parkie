@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+# 25.times do
+#   p = Project.create!(
+#     title: Faker::App.name,
+#     description: Faker::Lorem.paragraph,
+#     goal: rand(100000),
+#     start_date: Time.now.utc - rand(60).days,
+#     end_date: Time.now.utc + rand(10).days
+#   )
