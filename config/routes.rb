@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
-  get 'user_sessions/new'
-
-  get 'user_sessions/create'
-
-  get 'user_sessions/destroy'
+  # get 'user_sessions/new'
+  #
+  # get 'user_sessions/create'
+  #
+  # get 'user_sessions/destroy'
 
   resources :users, only: [:new, :create, :show]
   resources :user_sessions, only: [:new, :create, :destroy]
 
   # root :to => 'http://localhost:3000'
-  resources :user_sessions
+  # resources :user_sessions
+  resources :search, only: [:new, :create, :show]
   resources :users
   resources :events
 
