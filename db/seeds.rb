@@ -8,11 +8,22 @@
 
 
 
-# 25.times do
-#   p = Project.create!(
-#     title: Faker::App.name,
-#     description: Faker::Lorem.paragraph,
-#     goal: rand(100000),
-#     start_date: Time.now.utc - rand(60).days,
-#     end_date: Time.now.utc + rand(10).days
-#   )
+
+
+parka = Park.create(
+    name: "Park A",
+    address: "142 Bloor Street West, Toronto, ON"
+  )
+
+parkb =  Park.create(
+      name: "Park B",
+      address: "85 Queens Wharf, Toronto, ON"
+    )
+
+basketball = Activity.create(
+        name: "Baksetball"
+      )
+
+      tennis = Activity.create(
+              name: "Tennis"
+            )
