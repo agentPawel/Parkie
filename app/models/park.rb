@@ -1,3 +1,4 @@
 class Park < ApplicationRecord
-  has_many :parkactivities
+  has_many :park_activities
+  has_many :activities, through: :park_activities
 end

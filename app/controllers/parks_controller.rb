@@ -4,26 +4,6 @@ class ParksController < ApplicationController
   end
 
   def show
-    @park = Park.find(params[:id])
+    @parks = Park.find(params[:id])
   end
-
-  def new
-    @park = Park.new
-  end
-
-  def create
-    @park = Park.new(park_params)
-    if @park.save
-      redirect_to "http://localhost:3000"
-    else
-      render :index
-    end
-  end
-  end
-
-  private
-  def park_params
-    params.require(:park).permit(:name, :address)
-  end
-
 end
