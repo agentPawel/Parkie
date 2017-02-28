@@ -8,8 +8,6 @@
 
 
 
-
-
 parka = Park.create(
     name: "Park A",
     address: "142 Bloor Street West, Toronto, ON"
@@ -24,6 +22,21 @@ basketball = Activity.create(
         name: "Baksetball"
       )
 
-      tennis = Activity.create(
-              name: "Tennis"
-            )
+tennis = Activity.create(
+        name: "Tennis"
+      )
+
+ParkActivity.create(
+  park_id: 1,
+  activity_id: 1
+)
+
+ParkActivity.create(
+  park_id: 2,
+  activity_id: 1
+)
+
+ParkActivity.create(
+  park_id: 2,
+  activity_id: 2
+)
