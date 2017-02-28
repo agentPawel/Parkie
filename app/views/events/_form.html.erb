@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+  <div class="field">
+     <%= f.label :date_time %><br />
+     <%= f.datetime_local_field :date_time %>
+  </div>
+
+  <div class="field">
+     <%= f.submit %>
+  </div>
+<% end %>
