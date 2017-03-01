@@ -2,10 +2,10 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   #has_many :ownedevents, class_name: 'Events'
-  has_many :events
+  has_many :owned_events, class_name: "Event"
   has_many :subscriptions
   has_many :participants
-  has_many :attendedevents, through: :participants, source: :events
+  has_many :attended_events, class_name: "Event", through: :participants, source: :event
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
