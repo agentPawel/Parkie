@@ -40,3 +40,11 @@ ParkActivity.create(
   park_id: 2,
   activity_id: 2
 )
+
+User.create(username: 'gmehra', email: "g@tt.com",
+first_name: 'G', last_name: 'M',
+password: "hello123", password_confirmation: "hello123")
+
+User.create(username: 'frank', email: "frank@tt.com",
+first_name: 'Frank', last_name: 'B',
+password: "hello123", password_confirmation: "hello123")
