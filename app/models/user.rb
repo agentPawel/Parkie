@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  #has_many :ownedevents, class_name: 'Events'
   has_many :owned_events, class_name: "Event"
   has_many :subscriptions
   has_many :participants
