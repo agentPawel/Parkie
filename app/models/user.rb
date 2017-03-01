@@ -4,8 +4,8 @@ class User < ApplicationRecord
   #has_many :ownedevents, class_name: 'Events'
   has_many :events
   has_many :subscriptions
-  has_many :eventattendances
-  has_many :attendedevents, through: :eventattendances, source: :events
+  has_many :participants
+  has_many :attendedevents, through: :participants, source: :events
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
