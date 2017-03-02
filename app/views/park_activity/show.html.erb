@@ -1,9 +1,16 @@
 <h1><%=@park_activity.activity.name %> at <%= @park_activity.park.name %>! </h1>
 
-<div class="park_activity_list">
+<div class="event_list">
   <div class="Container">
-    <h2>Events:</h2>
-
+    <h2>Events for <%=:</h2>
+    <div class="Events!" >
+      <% @park_activity_events.each do |event| %>
+      <div class="Container">
+        <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%><h3>
+      </div>
+      <br>
+      <%end%>
+    </div>
 
 
   </div>
