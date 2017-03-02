@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'search#new'
+
   resources :park_activity, only: [:index, :show]
 
   # get 'user_sessions/new'

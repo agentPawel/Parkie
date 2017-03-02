@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   skip_before_action :require_login, only: [:index, :new, :create]
 
   def new
-    @events = Event.new
+    @event = Event.new
+    byebug
   end
 
   def create
