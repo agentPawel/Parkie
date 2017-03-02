@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    byebug
   end
 
   def create

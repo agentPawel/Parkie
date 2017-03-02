@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'search#new'
+  root 'search#new'
 
   resources :park_activity, only: [:index, :show]
 

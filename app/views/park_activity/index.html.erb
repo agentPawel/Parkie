@@ -1,0 +1,9 @@
+<h1> Park's List! </h1>
+<div class="Park Activities!">
+  <% @park_activities.each do |a | %>
+  <div class="Container">
+    <h3><%= a.activity.name %><h3>
+  </div>
+  <br>
+  <%end%>
+</div>
