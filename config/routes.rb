@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'park_activity/show'
   resources :park_activity, only: [:index, :show]
 
   # get 'user_sessions/new'
