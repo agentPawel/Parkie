@@ -7,6 +7,6 @@ class ParkActivityController < ApplicationController
 
   def show
     @park_activity = ParkActivity.find(params[:id])
-    @park_activity_event = @park_activity.event 
+    # @park_activity_event = @park_activity.event
   end
 end
