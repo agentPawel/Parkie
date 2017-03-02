@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :search, only: [:new, :create, :show]
   resources :users
   resources :events
+  resources :activities
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
