@@ -41,10 +41,18 @@ ParkActivity.create(
   activity_id: 2
 )
 
-User.create(username: 'gmehra', email: "g@tt.com",
+User.create(username: 'gmehra', email: "gmehra@gmail.com",
 first_name: 'G', last_name: 'M',
-password: "hello123", password_confirmation: "hello123")
+password: "bitmaker", password_confirmation: "bitmaker")
 
-User.create(username: 'frank', email: "frank@tt.com",
+User.create(username: 'frank', email: "frank.burke@gmail.com",
 first_name: 'Frank', last_name: 'B',
-password: "hello123", password_confirmation: "hello123")
+password: "bitmaker", password_confirmation: "bitmaker")
+
+User.create(username: 'pawel', email: "pawelp@gmail.com",
+first_name: 'Pawel', last_name: 'P',
+password: "bitmaker", password_confirmation: "bitmaker")
+
+User.create(username: 'val', email: "veejboem@gmail.com",
+first_name: 'Val', last_name: 'B',
+password: "bitmaker", password_confirmation: "bitmaker")
