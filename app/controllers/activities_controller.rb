@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      redirect_to "http://localhost:3000"
+      redirect_to "root_url"
     else
       render :index
     end

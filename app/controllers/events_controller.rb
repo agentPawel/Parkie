@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to "http://localhost:3000"
+      redirect_to "root_url"
     else
       render 'new'
     end
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
 
-    redirect_to "http://localhost:3000"
+    redirect_to "root_url"
   end
 
   def event_params
