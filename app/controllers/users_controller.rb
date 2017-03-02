@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to "http://localhost:3000"
+      redirect_to "root_url"
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destory
 
-    redirect_to "http://localhost:3000"
+    redirect_to "root_url"
   end
 
   private
