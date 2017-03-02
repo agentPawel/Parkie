@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+  $(".park_li").click(function (){
+    console.log("button was clicked")
+  })
+})

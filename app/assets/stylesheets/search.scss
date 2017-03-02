@@ -2,14 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.searchPage {
+  background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
+  background-repeat: round;
+}
+
+.searchPage ul {
+  position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 1;
+    margin-top: -59px;
+}
+
+.containerImage {
+  margin-top: 50px;
+}
+
+.homeImage img {
+  width: 100%;
+}
+
+.containerPark img {
+  width: 100%;
+}
+
+.containerPark {
+  padding: 0;
+  margin: 0;
+}
 
 .list-group {
-  padding-top: 100px;
+
   text-align: center;
 }
 
 .list-group p {
-  margin-top: 15px;
+  margin-top: 10%;
+  color: white;
 }
 
 .collapsed {
@@ -17,10 +47,13 @@
   color: white;
 }
 
+.park_li {
+
+}
+
 .park_li li {
     background-color: black;
     color: white;
-    margin-top: 10%;
     padding: 20px;
 }
 
@@ -29,4 +62,5 @@
   color: white;
   margin-top: 10%;
   padding: 20px;
+
 }
