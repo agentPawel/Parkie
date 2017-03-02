@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'park_activity/show'
+
   # get 'user_sessions/new'
   #
   # get 'user_sessions/create'
