@@ -1,7 +1,10 @@
+<h1> Park's List! </h1>
 <div class="Park_List">
   <% @parks.each do |park| %>
   <div class="Container">
     <h3><%= park.name %><h3>
     <p><%= park.address %></p>
   </div>
+  <br>
+  <%end%>
 </div>
