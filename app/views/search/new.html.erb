@@ -1,5 +1,6 @@
 <div class="container">
   <div class="Park_Search">
+    <h1>List of Parks Nearby</h1>
     <% @parks.each do |park| %>
       <h3><%= park.name %></h3>
       <p><%= park.address %></p>
@@ -7,6 +8,7 @@
   </div>
 
   <div class="Activity Search">
+    <h1>List of Activities</h1>
     <% @activities.each do |activity| %>
       <h3><%= activity.name %></h3>
     <% end %>
