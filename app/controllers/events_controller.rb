@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :new, :create]
+  # skip_before_action :require_login, only: [:index, :new, :create]
 
   def new
     @event = Event.new
