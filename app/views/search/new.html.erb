@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="Park_Search">
+    <% @parks.each do |park| %>
+      <h3><%= park.name %></h3>
+      <p><%= park.address %></p>
+    <% end %>
+  </div>
+
+  <div class="Activity Search">
+    <% @activities.each do |activity| %>
+      <h3><%= activity.name %></h3>
+    <% end %>
+  </div>
+</div>
