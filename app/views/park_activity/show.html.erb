@@ -1,12 +1,13 @@
 <h1><%=@park_activity.activity.name %> at <%= @park_activity.park.name %>! </h1>
-
+<span class = "subscribe_button"><%=button_tag "Subscribe to this feed!"%> </span>
 <div class="event_list">
   <div class="Container">
     <h2>Events for <%=Time.now.day%> </h2>
     <div class="Events!">
       <% @park_activity_events.each do |event| %>
       <div class="Container">
-        <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%><h3>
+        <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with X people!<h3>
+          <span class = "join_event_button"><%=button_tag "Join Event!"%> </span>
       </div>
       <br>
       <%end%>
