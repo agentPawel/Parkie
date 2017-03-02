@@ -2,7 +2,7 @@
 <span class = "subscribe_button"><%=button_tag "Subscribe to this feed!"%> </span>
 <div class="event_list">
   <div class="Container">
-    <h2>Events for <%=Time.now.day%> </h2>
+    <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
     <div class="Events!">
       <% @park_activity_events.each do |event| %>
       <div class="Container">
