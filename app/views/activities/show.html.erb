@@ -1,8 +1,24 @@
-<h1><%= @activity.name %></h1>
 
-<% @park_list.each do |park| %>
-  <%= link_to park_activity_path, :action => 'go' do %>
-    <h3><%= park.name %></h3>
-    <p><%= park.address %></p>
-  <% end %>
-<% end %>
+
+
+<h1><%=@activity.name %> at <%= @park.name %>! </h1>
+<button class="subcribe_button" name="subscribe_button" type="submit">Subcribe to this feed!</button>
+<div class="event_list">
+  <div class="Container">
+    <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
+    <div class="Events!">
+      <% @park_activity_events.each do |event| %>
+      <div class="Container">
+        <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with X people!<h3>
+          <button class="join_event_button" name="join_event_button" type="submit">Subscribe to this feed!</button>
+      </div>
+      <br>
+      <%end%>
+    </div>
+
+
+
+  </div>
+</div>
+
+<%= link_to "Create Event!", new_event_path %>

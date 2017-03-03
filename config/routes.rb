@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :parks do
     resources :activities do
-      resources :park_activity
+      resources :events
     end
   end
 

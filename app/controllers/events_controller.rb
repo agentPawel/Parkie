@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  # skip_before_action :require_login, only: [:index, :new, :create]
+  before_action :require_login, only: [:new, :create]
 
   def new
     @event = Event.new
@@ -26,6 +26,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date_time)
+    params.require(:event).permit(:date_time, :user_id, :park_activity_id)
   end
 end

@@ -5,7 +5,9 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-    @park_list = @activity.parks
+    @park = Park.find(params[:park_id])
+    @park_activity = ParkActivity.where(park_id: params[:park_id], activity_id: params[:id]).ids
+    @park_activity_events = Event.where(park_activity_id: @park_activity)
   end
 
   def new
