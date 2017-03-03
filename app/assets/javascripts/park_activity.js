@@ -1,15 +1,16 @@
-// $(function(){
-//
-//   $('.subscribe_button').on('click',(function(event){
-//     event.preventDefault();
-//
-//     $.ajax({
-//       url: 'http://bitkittens.herokuapp.com/cats.json',
-//       method:'POST'
-//       data: $('#tweet_message').serialize(),
-//       dataType: 'json' //json, text, html
-//
-//
+$(function(){
+
+  $('.subscribe_button').on('click',(function(event){
+
+    $.ajax({
+      url: subscriptions_path,
+      method:'POST'
+      data: {
+            park_activity_id: ParkActivity.find(params[:id]).id,
+            user_id: current_user.id },
+      dataType: 'json' //json, text, html
+
+
 //     }).done(function(data){
 //       console.log(data);
 //       var list = '<li class="tweet"><p>' + data.message + '</p><time>'+ data.created_at +'</time></li>';
