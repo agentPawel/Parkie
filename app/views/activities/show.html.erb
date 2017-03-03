@@ -1,1 +1,8 @@
 <h1><%= @activity.name %></h1>
+
+<% @park_list.each do |park| %>
+  <%= link_to park_activity_path, :action => 'go' do %>
+    <h3><%= park.name %></h3>
+    <p><%= park.address %></p>
+  <% end %>
+<% end %>

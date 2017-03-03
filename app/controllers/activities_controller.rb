@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @park_list = @activity.parks
   end
 
   def new
