@@ -12,7 +12,9 @@
   <div class="Activity Search">
     <h1>List of Activities</h1>
     <% @activities.each do |activity| %>
-      <h3><%= activity.name %></h3>
+      <%= link_to activity, :action => 'go'  do %>
+        <h3><%= activity.name %></h3>
+      <% end %>
     <% end %>
   </div>
 </div>

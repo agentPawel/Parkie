@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'search#new'
 
   resources :park_activity, only: [:index, :show]
-  resources :subscriptions, only: [:new, :create, :destroy]
 
   # get 'user_sessions/new'
   #
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
   resources :search, only: [:new, :create, :show]
   resources :users
   resources :events
+  resources :activities
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
