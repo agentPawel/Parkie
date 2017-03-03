@@ -1,6 +1,9 @@
 <div class="Activities_List">
   <% @activities.each do |activity| %>
-  <div class="Container">
-    <h3><%= activity.name %><h3>
+  <%= link_to park_activity_park_activity(activity.id), :action => 'go'  do %>
+    <div class="Container">
+      <h3><%= activity.name %><h3>
+    <% end %>
+  <% end %>
   </div>
 </div>

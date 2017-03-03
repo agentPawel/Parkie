@@ -2,7 +2,7 @@
   <div class="Park_Search">
     <h1>List of Parks Nearby</h1>
     <% @parks.each do |park| %>
-      <%= link_to park, :action => 'go'  do %>
+      <%= link_to park_activities_path(park.id), :action => 'go'  do %>
         <h3><%= park.name %></h3>
         <p><%= park.address %></p>
       <% end %>

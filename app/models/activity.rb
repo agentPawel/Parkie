@@ -5,4 +5,5 @@ class Activity < ApplicationRecord
 
   validates :name, presence: true
 
+  # accepts_nested_attributes_for :parks
 end

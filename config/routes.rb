@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
   root 'search#new'
 
+  resources :parks do
+    resources :activities do
+      resources :park_activity
+    end
+  end
+
+
+
+
+
   resources :park_activity, only: [:index, :show]
   resources :subscriptions, only: [:new, :create, :destroy]
-
-  # get 'user_sessions/new'
-  #
-  # get 'user_sessions/create'
-  #
-  # get 'user_sessions/destroy'
-
   resources :users, only: [:new, :create, :show]
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :parks, only: [:index, :show]
-
-  # root :to => 'http://localhost:3000'
-  # resources :user_sessions
   resources :search, only: [:new, :create, :show]
-  resources :users
+  # resources :users
   resources :events
   resources :activities
 

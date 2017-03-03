@@ -26,20 +26,30 @@ tennis = Activity.create(
         name: "Tennis"
       )
 
-ParkActivity.create(
-  park_id: 1,
-  activity_id: 1
+splashpad = Activity.create(
+        name: "Splashpad"
 )
 
-ParkActivity.create(
-  park_id: 2,
-  activity_id: 1
-)
+ParkActivity.create(park_id: parka.id, activity_id: basketball.id)
+ParkActivity.create(park_id: parka.id, activity_id: splashpad.id)
 
-ParkActivity.create(
-  park_id: 2,
-  activity_id: 2
-)
+ParkActivity.create(park_id: parkb.id, activity_id: basketball.id)
+ParkActivity.create(park_id: parkb.id, activity_id: tennis.id)
+
+# ParkActivity.create(
+#   park_id: 1,
+#   activity_id: 1
+# )
+#
+# ParkActivity.create(
+#   park_id: 2,
+#   activity_id: 1
+# )
+#
+# ParkActivity.create(
+#   park_id: 2,
+#   activity_id: 2
+# )
 
 User.create(username: 'gmehra', email: "gmehra@gmail.com",
 first_name: 'G', last_name: 'M',

@@ -6,6 +6,5 @@ class ParksController < ApplicationController
   def show
     @park = Park.find(params[:id])
     @park_activities = @park.activities
-    
   end
 end

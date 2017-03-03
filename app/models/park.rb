@@ -4,4 +4,6 @@ class Park < ApplicationRecord
   has_many :events, through: :park_activities
 
   validates :name, :address, presence: true
+
+  # accepts_nested_attributes_for :activities
 end
