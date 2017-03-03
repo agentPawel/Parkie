@@ -19,7 +19,7 @@ parkb =  Park.create(
     )
 
 basketball = Activity.create(
-        name: "Baksetball"
+        name: "Basketball"
       )
 
 tennis = Activity.create(
