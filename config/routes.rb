@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'search#new'
 
   resources :park_activity, only: [:index, :show]
+  resources :subscriptions, only: [:new, :create, :destroy]
 
   # get 'user_sessions/new'
   #
