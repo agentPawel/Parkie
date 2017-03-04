@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
   # resources :parks, only: [:index, :show]
   resources :search, only: [:new, :create, :show]
+  resources :activities
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
