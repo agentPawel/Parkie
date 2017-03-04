@@ -10,6 +10,11 @@ class ActivitiesController < ApplicationController
     @park_activity_events = Event.where(park_activity_id: @park_activity)
   end
 
+  def park_list
+    @activity = Activity.find(params[:id])
+    @park_list = @activity.parks
+  end
+
   def new
     @activity = Activity.new
   end

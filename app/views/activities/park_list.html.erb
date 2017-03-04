@@ -1,0 +1,10 @@
+<div class="Park_List">
+  <% @park_list.each do |park| %>
+    <%= link_to park_activity_path(park.id, @activity.id), :action => 'go'  do %>
+      <div class="Container">
+        <h3><%= park.name %><h3>
+        <p><%= park.address %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
