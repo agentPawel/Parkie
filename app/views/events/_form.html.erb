@@ -1,17 +1,18 @@
-<%= form_for @event do |f| %>
+<%= form_for [@park, @activity, @event] do |f| %>
   <div class="field">
      <%= f.label :date_time %><br />
      <%= f.datetime_select :date_time %>
   </div>
 
- <div class="field">
-     <%= f.label :count %><br />
-     <%= f.number_field :count %>
+  <div class="field">
+    <%= f.label :count %><br />
+    <%= f.number_field :count %>
   </div>
 
- <div class="field">
-     <%= f.label :description %><br />
-     <%= f.text_area :description %>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
   </div>
 
- <%= f.submit %><br><br>
+  <%= f.submit %><br><br>
+<% end %>
