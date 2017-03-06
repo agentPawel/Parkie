@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   root 'search#new'
 
   resources :parks do

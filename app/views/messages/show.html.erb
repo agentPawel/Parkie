@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>To num:</strong>
+  <%= @message.to_num %>
+</p>
+
+<p>
+  <strong>From num:</strong>
+  <%= @message.from_num %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @message.subscription_id %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @message.integer %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
