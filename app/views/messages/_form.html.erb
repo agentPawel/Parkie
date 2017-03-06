@@ -1,42 +1,25 @@
-<%= form_for(message) do |f| %>
+<%= form_for(@message) do |f| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
       <ul>
-      <% message.errors.full_messages.each do |message| %>
+      <% @message.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= f.label :to_num %>
-    <%= f.text_field :to_num %>
-  </div>
-
-  <div class="field">
-    <%= f.label :from_num %>
-    <%= f.text_field :from_num %>
-  </div>
-
-  <div class="field">
-    <%= f.label :subscription_id %>
-    <%= f.text_field :subscription_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :integer %>
-    <%= f.text_field :integer %>
-  </div>
-
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= form_for [@message], url: '/send_message' do |f| %>
+
+  <p><%= f.label :to %></p>
+  <p><%= f.telephone_field :to_num %></p>
+  <p><%= f.label :body %></p>
+  <p><%= f.text_area :body %></p>
+  <p><%= f.submit "Send Message" %></p>
+
+<% end %>
+</div>
 <% end %>

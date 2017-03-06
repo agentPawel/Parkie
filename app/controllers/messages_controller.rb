@@ -23,18 +23,15 @@ class MessagesController < ApplicationController
 
   # POST /messages
   # POST /messages.json
+
   def create
     @message = Message.new(message_params)
 
-    respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
+        Message.send_message(message_params[:to_num], message_params[:body])
       else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+        render root_path
       end
-    end
   end
 
   # PATCH/PUT /messages/1
@@ -71,4 +68,6 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:body, :to_num, :from_num, :subscription_id, :integer)
     end
+
+
 end

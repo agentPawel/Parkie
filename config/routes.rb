@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :messages
+  resources :messages do
+    post 'send_message'
+  end 
+
   root 'search#new'
 
   resources :parks do
