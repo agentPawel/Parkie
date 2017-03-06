@@ -15,13 +15,15 @@ class UsersController < ApplicationController
     end
   end
 
-  # def index
-  #   @users = Users.all
-  # end
-
   def show
     require_login
-    @users = User.find(params[:id])
+    @user = current_user
+
+    # Pulls an array of a users active subscriptions
+    @user_subscriptions = @user.subscriptions
+
+    # Pulls an array of a users current events they are attending
+    @user_events = @user.attended_events
   end
 
   def destroy

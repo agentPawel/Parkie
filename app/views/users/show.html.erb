@@ -1,0 +1,18 @@
+<% if @user_subscriptions.count == 0 %>
+  <h1>Welcome to Parkie!<h1>
+  <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
+<% else %>
+  <h3>Here is a list of your subscriptions</h3>
+  <% @user_subscriptions.each do |subscription| %>
+    <p><%= subscription.activities.name %> @ <%= subscription.parks.name %></p>
+  <% end %>
+<% end %>
+
+<% if @user_events.count == 0 %>
+  <h1>You are not currently scheduled to attend any events...:(...)<h1>
+<% else %>
+  <h3>Here is a list of your events</h3>
+  <% @user_events.each do |events| %>
+    <p><%= subscription.activities.name %> @ <%= subscription.parks.name %></p>
+  <% end %>
+<% end %>
