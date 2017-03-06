@@ -27,11 +27,14 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
+      # Subscription.where("park_activity_id = #{@event.park_activity}")
       redirect_to root_url()
     else
       render 'new'
     end
   end
+
+
 
   def show
     @events = Event.find(params[:id])

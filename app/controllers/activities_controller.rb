@@ -23,7 +23,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      redirect_to "root_url"
+      redirect_to root_url
     else
       render :index
     end
