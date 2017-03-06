@@ -9,6 +9,8 @@
     <% end %>
   </div>
 
+
+
   <div class="Activity Search">
     <h1>List of Activities</h1>
     <% @activities.each do |activity| %>
@@ -18,3 +20,16 @@
     <% end %>
   </div>
 </div>
+
+
+
+<% @parks.each do |park| %>
+  <%park.nearbys(1.9).each do |near_park| %>
+    <li><%= link_to near_park.name%> (<%= near_park.distance.round(2)%> kms)</li>
+  <% end %>
+<% end %>
+
+ <% @current_location.each do |park|%>
+  <p> <%= park.name %> </p>
+
+ <% end %>

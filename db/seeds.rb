@@ -9,14 +9,40 @@
 
 
 parka = Park.create(
-    name: "Park A",
-    address: "142 Bloor Street West, Toronto, ON"
+    name: "Art Eggleton Park",
+    address: "323 Harbord St, Toronto, ON M6G 1G9"
+
   )
 
 parkb =  Park.create(
-      name: "Park B",
-      address: "85 Queens Wharf, Toronto, ON"
-    )
+    name: "Healy Willan",
+    address: "504 Euclid Ave, Toronto, ON M6G 2T2"
+  )
+
+parkc = Park.create(
+    name: "Christie Pits",
+    address: "750 Bloor St W, Toronto, ON M6G 3K4"
+
+  )
+
+parkd =  Park.create(
+    name: "Fred Hamilton Park",
+    address: "155 Roxton Rd, Toronto, ON M6J 2Y4"
+  )
+
+
+parke = Park.create(
+    name: "Dufferin Grove",
+    address: "875 Dufferin Park Ave, Toronto, ON M6H 4B2"
+
+  )
+
+parkf =  Park.create(
+    name: "Trinity Bellwoods Park",
+    address: "790 Queen St W, Toronto, ON M6J 1G3"
+  )
+
+
 
 basketball = Activity.create(
         name: "Basketball"
@@ -30,11 +56,71 @@ splashpad = Activity.create(
         name: "Splashpad"
 )
 
+dog_park = Activity.create(
+        name: "Dog Park"
+)
+
+playground = Activity.create(
+        name: "Playground"
+)
+
+soccer = Activity.create(
+        name: "Soccer"
+)
+
+hockey = Activity.create(
+        name: "Hockey"
+)
+
+baseball = Activity.create(
+        name: "Baseball"
+)
+
+bocce = Activity.create(
+        name: "Bocce Ball"
+)
+
+ping_pong = Activity.create(
+        name: "Ping Pong"
+)
+
 ParkActivity.create(park_id: parka.id, activity_id: basketball.id)
 ParkActivity.create(park_id: parka.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parka.id, activity_id: playground.id)
+ParkActivity.create(park_id: parka.id, activity_id: ping_pong.id)
 
-ParkActivity.create(park_id: parkb.id, activity_id: basketball.id)
-ParkActivity.create(park_id: parkb.id, activity_id: tennis.id)
+
+ParkActivity.create(park_id: parkb.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parkb.id, activity_id: playground.id)
+
+
+ParkActivity.create(park_id: parkc.id, activity_id: basketball.id)
+ParkActivity.create(park_id: parkc.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parkc.id, activity_id: playground.id)
+ParkActivity.create(park_id: parkc.id, activity_id: soccer.id)
+ParkActivity.create(park_id: parkc.id, activity_id: hockey.id)
+ParkActivity.create(park_id: parkc.id, activity_id: baseball.id)
+ParkActivity.create(park_id: parkc.id, activity_id: ping_pong.id)
+
+ParkActivity.create(park_id: parkd.id, activity_id: playground.id)
+ParkActivity.create(park_id: parkd.id, activity_id: dog_park.id)
+ParkActivity.create(park_id: parkd.id, activity_id: bocce.id)
+
+ParkActivity.create(park_id: parke.id, activity_id: basketball.id)
+ParkActivity.create(park_id: parke.id, activity_id: hockey.id)
+ParkActivity.create(park_id: parke.id, activity_id: baseball.id)
+ParkActivity.create(park_id: parke.id, activity_id: soccer.id)
+ParkActivity.create(park_id: parke.id, activity_id: playground.id)
+ParkActivity.create(park_id: parke.id, activity_id: splashpad.id)
+
+ParkActivity.create(park_id: parkf.id, activity_id: playground.id)
+ParkActivity.create(park_id: parkf.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parkf.id, activity_id: dog_park.id)
+ParkActivity.create(park_id: parkf.id, activity_id: baseball.id)
+ParkActivity.create(park_id: parkf.id, activity_id: tennis.id)
+
+
+
 
 # ParkActivity.create(
 #   park_id: 1,
