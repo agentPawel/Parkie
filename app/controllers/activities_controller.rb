@@ -6,8 +6,9 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
     @park = Park.find(params[:park_id])
-    @park_activity = ParkActivity.where(park_id: params[:park_id], activity_id: params[:id]).ids
+    @park_activity = ParkActivity.find_by(park_id: params[:park_id], activity_id: params[:id])
     @park_activity_events = Event.where(park_activity_id: @park_activity)
+    @subscription = Subscription.find_by(park_activity_id: @park_activity.id, user_id: current_user.id)
   end
 
   def park_list
@@ -27,7 +28,6 @@ class ActivitiesController < ApplicationController
       render :index
     end
   end
-
 
   private
   def activity_params

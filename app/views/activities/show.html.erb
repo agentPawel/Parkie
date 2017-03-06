@@ -1,6 +1,15 @@
 <h1><%=@activity.name %> at <%= @park.name %>! </h1>
 
-<button class="subcribe_button" name="subscribe_button" type="submit">Subcribe to this feed!</button>
+<% if @subscription == nil %>
+  <%= form_tag(subscriptions_path, method: 'post') do %>
+    <%= hidden_field_tag(:park_activity_id, @park_activity.id) %>
+    <button class="subcribe_button" name="subscribe_button" type="submit">Subscribe!</button>
+  <% end %>
+<% else %>
+    <%= form_tag(subscription_path(id: @subscription.id), method: 'delete') do %>
+      <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+    <% end %>
+<% end %>
 
 <div class="event_list">
   <div class="Container">
