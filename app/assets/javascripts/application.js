@@ -12,6 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_self
-console.log("yo");
+//= require_tree .

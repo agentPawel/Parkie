@@ -2,5 +2,6 @@
 <p><%= @park.address %></p>
 
 <% @park_activities.each do |activity| %>
-  <h3><%= link_to "Back to search", parks_url %></h3>
+  <h3><%= link_to activity.name, park_activity_path(:park_id, :id) %><h3>
 <%end%>
+<h3><%= link_to "Back To Search Results", :back %></h3>
