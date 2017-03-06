@@ -1,7 +1,7 @@
 <div class="Activities_List">
   <div class="Container">
     <% @activities.each do |activity| %>
-      <%= link_to park_activity_path(params[:park_id], activity.id), :action => 'go'  do %>
+      <%= link_to park_activity_path(params[:park_id], activity.id), :action => 'go' do %>
         <h3><%= activity.name %></h3>
       <% end %>
     <% end %>

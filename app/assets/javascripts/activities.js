@@ -21,18 +21,3 @@
 //     });
 //   });
 // });
-
-
-//     }).done(function(data){
-//       console.log(data);
-//       var list = '<li class="tweet"><p>' + data.message + '</p><time>'+ data.created_at +'</time></li>';
-//       $('.tweets').prepend(list);
-//
-//     }).fail(function(jqXHR, textStatus, errorThrown){
-//       console.log('Ajax Request Failed');
-//       console.log(jqXHR);
-//     }).always(function(){
-//       console.log('Ajax Request Sent');
-//     });
-//   });
-// });
