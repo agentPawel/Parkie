@@ -9,10 +9,10 @@
 <% end %>
 
 <% if @user_events.count == 0 %>
-  <h1>You are not currently scheduled to attend any events...:(...)<h1>
+  <h1>You are not currently scheduled to attend any events...<h1>
 <% else %>
   <h3>Here is a list of your events</h3>
-  <% @user_events.each do |events| %>
-    <p><%= subscription.activities.name %> @ <%= subscription.parks.name %></p>
+  <% @user_events.each do |event| %>
+    <p><%= event.activities.name %> @ <%= event.parks.name %></p>
   <% end %>
 <% end %>
