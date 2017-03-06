@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to "root_url"
+      redirect_to root_url
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destory
-    redirect_to "root_url"
+    redirect_to root_url
   end
 
   private
