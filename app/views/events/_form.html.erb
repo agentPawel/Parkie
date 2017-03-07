@@ -1,7 +1,7 @@
 <%= form_for [@park, @activity, @event] do |f| %>
   <div class="field">
      <%= f.label :date_time %><br />
-     <%= f.datetime_select :date_time %>
+     <%= f.datetime_select :date_time, ampm:true %>
   </div>
 
   <div class="field">
