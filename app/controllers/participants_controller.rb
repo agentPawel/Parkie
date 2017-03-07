@@ -6,10 +6,10 @@ class ParticipantsController < ApplicationController
     @participants.event_id = params[:event]
     if @participants.save
       Event.find(params[:event]).count += 1
-      if current_user.cell != nil
+      if current_user.cell != nil || current_user.cell == ""
         participant_event_join_message
       end
-      if Event.find(params[:event]).owner.cell != nil
+      if Event.find(params[:event]).owner.cell != nil || Event.find(params[:event]).owner.cell == ""
         owner_event_join_message
       end
       redirect_to user_path(current_user.id)
@@ -22,9 +22,19 @@ class ParticipantsController < ApplicationController
     user = current_user.id
     event = params[:event]
     @participant = Participant.find_by(user_id: user, event_id: event)
-    @participant.destroy
-    Event.find(event).count -= 1
-    redirect_to user_path(current_user.id)
+    if @participant.destroy
+      Event.find(event).count -= 1
+      if current_user.cell != nil && current_user.cell != ""
+        participant_cancel_message
+      end
+      if Event.find(params[:event]).owner.cell != nil && Event.find(params[:event]).owner.cell != ""
+        owner_participant_cancel_message
+      end
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to user_path(current_user.id)
+    end
+
   end
 
   def participant_event_join_message
@@ -36,15 +46,37 @@ class ParticipantsController < ApplicationController
     Message.send_message(current_user.cell, body)
   end
 
+  def participant_cancel_message
+    owner = Event.find(params[:event]).owner.username
+    activity = Event.find(params[:event]).activity.name
+    park = Event.find(params[:event]).park.name
+    time = Event.find(params[:event]).date_time
+    body = "PARKIE: You've canceled your participation for #{owner}'s #{activity} event at #{park} for #{time.strftime("%I:%M%p")}!"
+    Message.send_message(current_user.cell, body)
+  end
+
   def owner_event_join_message
     owner = Event.find(params[:event]).owner.username
     owner_cell = Event.find(params[:event]).owner.cell
     park = Event.find(params[:event]).park.name
     time = Event.find(params[:event]).date_time
+    activity = Event.find(params[:event]).activity.name
     participant = current_user.username
     body = "PARKIE: Hi #{owner}! #{participant} has just joined your #{activity} event at #{park} for #{time.strftime("%I:%M%p")}!"
     Message.send_message(owner_cell, body)
   end
+
+  def owner_participant_cancel_message
+    owner = Event.find(params[:event]).owner.username
+    owner_cell = Event.find(params[:event]).owner.cell
+    park = Event.find(params[:event]).park.name
+    time = Event.find(params[:event]).date_time
+    activity = Event.find(params[:event]).activity.name
+    participant = current_user.username
+    body = "PARKIE: Hi #{owner}! #{participant} has just cancelled their participation for your #{activity} event at #{park} for #{time.strftime("%I:%M%p")}!"
+    Message.send_message(owner_cell, body)
+  end
+
 
 
 

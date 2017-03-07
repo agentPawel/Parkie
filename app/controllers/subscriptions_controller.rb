@@ -14,7 +14,7 @@ class SubscriptionsController < ApplicationController
     if @subscription.save
       park_id = @subscription.park.id
       activity_id = @subscription.activity.id
-      if current_user.cell != nil
+      if current_user.cell != nil && current_user.cell != ""
         subscription_join_message
       end
       redirect_to park_activity_path(park_id: park_id, id: activity_id)
