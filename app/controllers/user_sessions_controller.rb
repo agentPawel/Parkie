@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
    end
 
    def destroy
-     logout 
-     redirect_to root_url, notice: 'Logged out!'
+     logout
+     redirect_to :back, notice: 'Logged out!'
    end
  end

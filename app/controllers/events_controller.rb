@@ -27,16 +27,19 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
+
       if current_user.cell != nil
         event_create_message
       end
       subscriber_event_notification_message
+
+      @event.count += 1
+
       redirect_to root_url()
     else
       render :new
     end
   end
-
 
 
   def show

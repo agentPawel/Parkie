@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
 parka = Park.create(
     name: "Art Eggleton Park",
     address: "323 Harbord St, Toronto, ON M6G 1G9"
@@ -51,6 +50,7 @@ parkh =  Park.create(
     name: "Alexandra Park",
     address: "275 Bathurst St, Toronto, ON M5T 2W6"
   )
+
 
 parkh =  Park.create(
     name: "Clarence Square Park",
@@ -163,6 +163,7 @@ ParkActivity.create(park_id: parki.id, activity_id: dog_park.id)
 ParkActivity.create(park_id: parkj.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkj.id, activity_id: splashpad.id)
 ParkActivity.create(park_id: parkj.id, activity_id: dog_park.id)
+
 
 User.create(username: 'gmehra', email: "gmehra@gmail.com",
 first_name: 'G', last_name: 'M',
