@@ -10,8 +10,7 @@ function initialize() {
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap',
-        scrollwheel: false
-        center:
+        scrollwheel: false,
         zoom: 15
     };
 
@@ -52,6 +51,7 @@ function initialize() {
     for( i = 0; i < markers.length; i++ ) {
         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
         bounds.extend(position);
+        console.log(position)
         marker = new google.maps.Marker({
             position: position,
             map: map,

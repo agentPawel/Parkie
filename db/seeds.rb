@@ -149,18 +149,6 @@ ParkActivity.create(park_id: parkf.id, activity_id: tennis.id)
 ParkActivity.create(park_id: parkg.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkg.id, activity_id: splashpad.id)
 ParkActivity.create(park_id: parkg.id, activity_id: dog_park.id)
-<<<<<<< HEAD
-
-ParkActivity.create(park_id: parkh.id, activity_id: playground.id)
-ParkActivity.create(park_id: parkh.id, activity_id: splashpad.id)
-ParkActivity.create(park_id: parkh.id, activity_id: dog_park.id)
-ParkActivity.create(park_id: parkh.id, activity_id: baseball.id)
-ParkActivity.create(park_id: parkh.id, activity_id: skateboarding.id)
-ParkActivity.create(park_id: parkh.id, activity_id: hockey.id)
-
-ParkActivity.create(park_id: parki.id, activity_id: playground.id)
-ParkActivity.create(park_id: parki.id, activity_id: dog_park.id)
-=======
 
 ParkActivity.create(park_id: parkh.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkh.id, activity_id: splashpad.id)
@@ -175,11 +163,7 @@ ParkActivity.create(park_id: parki.id, activity_id: dog_park.id)
 ParkActivity.create(park_id: parkj.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkj.id, activity_id: splashpad.id)
 ParkActivity.create(park_id: parkj.id, activity_id: dog_park.id)
->>>>>>> SetUpActivitiesLinks
 
-ParkActivity.create(park_id: parkj.id, activity_id: playground.id)
-ParkActivity.create(park_id: parkj.id, activity_id: splashpad.id)
-ParkActivity.create(park_id: parkj.id, activity_id: dog_park.id)
 
 User.create(username: 'gmehra', email: "gmehra@gmail.com",
 first_name: 'G', last_name: 'M',
