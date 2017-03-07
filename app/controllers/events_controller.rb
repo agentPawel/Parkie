@@ -64,7 +64,7 @@ class EventsController < ApplicationController
   end
 
   def subscriber_event_notification_message
-    owner = @event.owner
+    e_owner = @event.owner.username
     park = @event.park_activity.park.name
     activity = @event.park_activity.activity.name
     time = @event.date_time
@@ -74,9 +74,9 @@ class EventsController < ApplicationController
       if User.find(subscription.user_id).cell != nil
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
-        body = "Hey #{name}, #{owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
+        body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
         Message.send_message(cell, body)
-        unless owner.cell == User.find(subscription.user_id).cell
+        unless @event.owner.cell == User.find(subscription.user_id).cell
         end
       end
     end
