@@ -27,20 +27,16 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
-
       if current_user.cell != nil
         event_create_message
       end
       subscriber_event_notification_message
-
       @event.count += 1
-
       redirect_to root_url()
     else
       render :new
     end
   end
-
 
   def show
     @events = Event.find(params[:id])
@@ -56,7 +52,6 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:date_time, :user_id, :park_activity_id, :description, :count)
   end
-
 
   def event_create_message
     park = @event.park_activity.park.name
@@ -84,7 +79,4 @@ class EventsController < ApplicationController
       end
     end
   end
-
-
-
 end
