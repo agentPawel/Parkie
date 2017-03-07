@@ -27,10 +27,13 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
+      if current_user.cell != nil
+        event_create_message
+      end
       # Subscription.where("park_activity_id = #{@event.park_activity}")
       redirect_to root_url()
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -44,10 +47,21 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
 
-    redirect_to "root_url"
+    redirect_to root_url
   end
 
   def event_params
     params.require(:event).permit(:date_time, :user_id, :park_activity_id, :description, :count)
   end
+
+
+  def event_create_message
+    park = @event.park_activity.park.name
+    activity = @event.park_activity.activity.name
+    time = @event.date_time
+    body = "PARKIE: You've just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
+    Message.send_message(current_user.cell, body)
+  end
+
+
 end
