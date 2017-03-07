@@ -30,7 +30,7 @@ class EventsController < ApplicationController
       if current_user.cell != nil
         event_create_message
       end
-      # Subscription.where("park_activity_id = #{@event.park_activity}")
+      subscriber_event_notification_message
       redirect_to root_url()
     else
       render :new
@@ -62,6 +62,26 @@ class EventsController < ApplicationController
     body = "PARKIE: You've just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
     Message.send_message(current_user.cell, body)
   end
+
+  def subscriber_event_notification_message
+    owner = @event.owner
+    park = @event.park_activity.park.name
+    activity = @event.park_activity.activity.name
+    time = @event.date_time
+
+    subscribers = @event.park_activity.subscriptions
+    subscribers.each do |subscription|
+      if User.find(subscription.user_id).cell != nil
+        name = User.find(subscription.user_id).username
+        cell = User.find(subscription.user_id).cell
+        body = "Hey #{name}, #{owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
+        Message.send_message(cell, body)
+        unless owner.cell == User.find(subscription.user_id).cell
+        end
+      end
+    end
+  end
+
 
 
 end
