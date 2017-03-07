@@ -4,6 +4,22 @@
     <div id="parks_near_by">
     </div>
   </div>
+  <br>
+
+  <%= form_tag(new_search_path, method: :get) do %>
+    <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+  <% end %>
+
+  <% @parks.each do |park| %>
+    <%= link_to park_path(park.id), :action => 'go'  do %>
+      <h3><%= park.name %></h3>
+  <%end%>
+
+
+
+
+  <br>
   <div id="map_wrapper">
       <div id="map_canvas" class="mapping"></div>
   </div>
@@ -16,4 +32,6 @@
       <h3><%= activity.name %></h3>
     <% end %>
   <% end %>
+
 </div>
+  <% end %>
