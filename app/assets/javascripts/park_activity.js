@@ -15,42 +15,96 @@ $(function(){
       },
       dataType: 'json'
     }).done(function(parks){
-      // for (park of parks)
-        console.log(parks)
+        // console.log(parks)
         for (var i=0; i < parks.length; i++)
         $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3> Address: " + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
-
-    })
+        parksList(parks)
+      })
   });
 
+  function parksList(parks) {
+    var bounds = new google.maps.LatLngBounds();
+    var markers = [];
+    for (var i=0; i < parks.length; i++) {
+      markers.push([parks[i].name, parks[i].latitude, parks[i].longitude]);
+    }
 
+    // Info Window Content
+    var infoWindowContent = []
+    for (var i=0; i < parks.length; i++) {
+      infoWindowContent.push(["<div class='info_content'><h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a><p>" + parks[i].address + "<p>"]);
+    }
+    console.log(infoWindowContent);
+
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+    // Loop through our array of markers & place each one on the map
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        console.log(markers)
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][8]
+        });
+
+        // Allow each marker to have an info window
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+    }
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(14);
+        google.maps.event.removeListener(boundsListener);
+    });
+
+  }
 
 });
 
 
-  //
-  //
-  // $('.subscribe_button').on('click',(function(event){
-  //
-  //   $.ajax({
-  //     url: subscriptions_path,
-  //     method:'POST'
-  //     data: {
-  //           park_activity_id: ParkActivity.find(params[:id]).id,
-  //           user_id: current_user.id },
-  //     dataType: 'json' //json, text, html
-  //
-
-//     }).done(function(data){
-//       console.log(data);
-//       var list = '<li class="tweet"><p>' + data.message + '</p><time>'+ data.created_at +'</time></li>';
-//       $('.tweets').prepend(list);
 //
-//     }).fail(function(jqXHR, textStatus, errorThrown){
-//       console.log('Ajax Request Failed');
-//       console.log(jqXHR);
-//     }).always(function(){
-//       console.log('Ajax Request Sent');
+// ===============================================
+//
+// var infoWindow = new google.maps.InfoWindow(), marker, i;
+//
+//    // Loop through our array of markers & place each one on the map
+//     for( i = 0; i < markers.length; i++ ) {
+//         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+//         bounds.extend(position);
+//         console.log(position)
+//         marker = new google.maps.Marker({
+//             position: position,
+//             map: map,
+//             title: markers[i][0]
+//         });
+//
+//        // Allow each marker to have an info window
+//         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+//             return function() {
+//                 infoWindow.setContent(infoWindowContent[i][0]);
+//                 infoWindow.open(map, marker);
+//             }
+//         })(marker, i));
+//
+//        // Automatically center the map fitting all markers on the screen
+//         map.fitBounds(bounds);
+//     }
+//
+//    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+//     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+//         this.setZoom(14);
+//         google.maps.event.removeListener(boundsListener);
 //     });
-//   });
-// });
+//
+// }

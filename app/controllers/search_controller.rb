@@ -14,10 +14,10 @@ class SearchController < ApplicationController
 
   def parks_near_by
     gps = params[:latitude]+','+ params[:longitude]
-    Park.near(gps, 1.9).size
+    Park.near(gps, 2.9).size
     respond_to do |format|
       format.json do
-        render :json => Park.near(gps, 1.9)
+        render :json => Park.near(gps, 2.9)
       end
     end
     # @parks.each do |park|
