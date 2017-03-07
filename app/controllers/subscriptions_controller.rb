@@ -1,6 +1,6 @@
 class SubscriptionsController < ApplicationController
-  before_action :store_return_to
-  before_action :require_login
+  before_action :require_login, except: [:create]
+  before_action :remember_activities_page, only: [:create]
 
   def new
     @subscription = Subscription.new
@@ -40,13 +40,13 @@ class SubscriptionsController < ApplicationController
 
   private
 
-  def store_return_to
-    session[:return_to] = request.url
-  end
+  def remember_activities_page
+    unless logged_in?
+      park_activity = ParkActivity.find(params[:park_activity_id])
+      return_to_url = park_activity_path(park_id: park_activity.park_id, id: park_activity.activity_id)
 
-  def require_login
-    unless current_user
-      redirect_to login_url
+      session[:return_to_url] = return_to_url if Config.save_return_to_url && request.post? && !request.xhr?
+      send(Config.not_authenticated_action)
     end
   end
 end
