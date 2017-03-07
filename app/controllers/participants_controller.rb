@@ -16,7 +16,6 @@ class ParticipantsController < ApplicationController
     user = current_user.id
     event = params[:event]
     @participant = Participant.find_by(user_id: user, event_id: event)
-    byebug
     @participant.destroy
     Event.find(event).count -= 1
     redirect_to user_path(current_user.id)
