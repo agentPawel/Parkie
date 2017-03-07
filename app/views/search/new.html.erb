@@ -1,70 +1,53 @@
 
-
-<h1>List of Parks Nearby</h1>
-
-<div class="container">
-  <div class="Park_Search">
-    <h1>Search by Parks</h1>
-    <div id="parks_near_by">
-    </div>
-  </div>
-  <div id="map_wrapper">
-      <div id="map_canvas" class="mapping"></div>
-  </div>
-</div>
-
-<div class="Activity Search">
-  <h1>Search by Activities</h1>
-  <% @activities.each do |activity| %>
-    <%= link_to park_list_path(activity.id), :action => 'go'  do %>
-      <h3><%= activity.name %></h3>
-    <% end %>
-  <% end %>
-</div>
-
-<ul class="list-group">
-  <div class="park_li">
-    <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePark" aria-expanded="false" aria-controls="collapsePark">
-      Park
-    </li>
-    <div id="collapsePark" class="collapse" role="tabpanel" aria-labelledby="headingPark">
-      <div class="card-block">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-        sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-        raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-
 <section class="searchPage">
 
-
-  <div class="containerImage">
-    <div class="homeImage">
-      <div class="hidden-sm">
+  <div class="hidden-sm">
+    <div class="containerImage">
+      <div class="mobileImage">
         <img src="http://finda.photo/image/16506/thumbnail/original">
       </div>
-      <div class="hidden-xs">
-
-      </div>
     </div>
-  </div>
+
 
     <ul class="list-group">
+
       <div class="park_li">
         <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePark" aria-expanded="false" aria-controls="collapsePark">
           Park
         </li>
         <div id="collapsePark" class="collapse" role="tabpanel" aria-labelledby="headingPark">
-          <div class="containerPark">
-            <img src="https://carlsonlaw.files.wordpress.com/2012/04/cl-google-map.png">
+          <div class="container">
+            <div class="Park_Search">
+              <h1>Search by Parks</h1>
+              <div id="parks_near_by">
+              </div>
+            </div>
+            <div id="map_wrapper">
+                <div id="map_canvas" class="mapping"></div>
+            </div>
           </div>
-          <a href="#" class="list-group-item list-group-item-action">Park #1</a>
-          <a href="#" class="list-group-item list-group-item-action">Park #2</a>
-          <a href="#" class="list-group-item list-group-item-action">Park #3</a>
-          <a href="#" class="list-group-item list-group-item-action">Park #4</a>
+<!--
+          <div class="card-block">
+            <div id="map_wrapper">
+              <div id="map_canvas" class="mapping"></div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="Park_Search">
+              <div id="parks_near_by"></div>
+            </div>
+          </div> -->
         </div>
       </div>
+
+      <!-- <div id="collapsePark" class="collapse" role="tabpanel" aria-labelledby="headingPark">
+        <div class="containerPark">
+
+        </div>
+      </div>
+      <div class="hidden-xs"> -->
+
 
       <div class="hidden-sm">
         <p><strong>OR</strong></p>
@@ -75,6 +58,14 @@
           Activity
         </li>
         <div id="collapseActivity" class="collapse" role="tabpanel" aria-labelledby="headingActivity">
+          <div class="list-group-item list-group-item-action">
+            <% @activities.each do |activity| %>
+            <%= link_to park_list_path(activity.id), :action => 'go'  do %>
+              <%= activity.name %>
+              <% end %>
+              <% end %>
+          </div>
+
           <a href="#" class="list-group-item list-group-item-action">Activity #1</a>
           <a href="#" class="list-group-item list-group-item-action">Activity #2</a>
           <a href="#" class="list-group-item list-group-item-action">Activity #3</a>

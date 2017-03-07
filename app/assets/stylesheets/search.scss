@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.header {
+  margin-top: 65px;
+}
+
+.mobileImage img {
+  width: 100%
+}
+
 .searchPage {
   background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
   background-repeat: round;
@@ -9,17 +17,18 @@
 
 .searchPage ul {
   position: relative;
-    width: 100%;
     margin-bottom: 0;
     z-index: 1;
     margin-top: -59px;
+    margin-left: 0;
+    width: 100%;
 }
 
-.containerImage {
-  margin-top: 50px;
-}
+// .containerImage {
+//   margin-top: 50px;
+// }
 
-.homeImage img {
+.map_wrapper {
   width: 100%;
 }
 
@@ -33,7 +42,6 @@
 }
 
 .list-group {
-
   text-align: center;
 }
 
@@ -47,10 +55,6 @@
   color: white;
 }
 
-.park_li {
-
-}
-
 .park_li li {
     background-color: black;
     color: white;
@@ -62,5 +66,18 @@
   color: white;
   margin-top: 10%;
   padding: 20px;
+}
 
+
+
+.list-group-item a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.collapseActivity:first-child {
+  padding: 0;
 }
