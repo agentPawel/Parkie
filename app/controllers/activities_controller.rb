@@ -8,9 +8,11 @@ class ActivitiesController < ApplicationController
     @park = Park.find(params[:park_id])
     @park_activity = ParkActivity.find_by(park_id: params[:park_id], activity_id: params[:id])
 
-    @subscription = Subscription.find_by(park_activity_id: @park_activity.id, user_id: current_user.id)
-
     @park_activity_events = Event.where(park_activity_id: @park_activity)
+
+    unless current_user == nil
+      @subscription = Subscription.find_by(park_activity_id: @park_activity.id, user_id: current_user.id)
+    end
   end
 
   def park_list

@@ -25,14 +25,16 @@
           <div class="Container">
             <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people!<h3>
 
-            <% if event.attendees.ids.include? current_user.id %>
-              <%= form_tag(participant_path(event: event), method: 'delete') do %>
-                <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+            <% unless current_user == nil %>
+              <% if event.attendees.ids.include? current_user.id %>
+                <%= form_tag(participant_path(event: event), method: 'delete') do %>
+                  <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+                <% end %>
+              <% else %>
+                <%= form_tag(participants_path, method: 'post') %>
+                <%= hidden_field_tag(:event, event.id) %>
+                <button class="join_event_button" name="join_event_button" type="submit">Attend this event!</button>
               <% end %>
-            <% else %>
-              <%= form_tag(participants_path, method: 'post') %>
-              <%= hidden_field_tag(:event, event.id) %>
-              <button class="join_event_button" name="join_event_button" type="submit">Attend this event!</button>
             <% end %>
           </div>
         <% end %>
