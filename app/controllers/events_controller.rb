@@ -17,7 +17,11 @@ class EventsController < ApplicationController
     @event.owner = current_user
     @event.park_activity = park_activity
     @event.description = params[:event][:description]
-    @event.count = params[:event][:count]
+    if @event.count = params[:event][:count] == "" || nil
+      @event.count = 0
+    else
+      @event.count = params[:event][:count]
+    end
     @event.date_time = params[:event][:date_time]
 
     @event.date_time = DateTime.new(params[:event]["date_time(1i)"].to_i,
@@ -27,11 +31,11 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
-      if current_user.cell != nil
+      if current_user.cell != nil && current_user.cell != ""
         event_create_message
       end
       subscriber_event_notification_message
-      @event.count += 1
+        @event.count += 1
       redirect_to root_url()
     else
       render :new
@@ -69,7 +73,7 @@ class EventsController < ApplicationController
 
     subscribers = @event.park_activity.subscriptions
     subscribers.each do |subscription|
-      if User.find(subscription.user_id).cell != nil
+      if User.find(subscription.user_id).cell != nil && User.find(subscription.user_id).cell != ""
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
         body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
