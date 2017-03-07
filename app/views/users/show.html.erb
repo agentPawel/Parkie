@@ -5,6 +5,9 @@
   <h3>Here is a list of your subscriptions</h3>
   <% @user_subscriptions.each do |subscription| %>
     <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
+    <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
+      <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+    <% end %>
   <% end %>
 <% end %>
 

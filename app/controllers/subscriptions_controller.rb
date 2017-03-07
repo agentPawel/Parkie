@@ -7,7 +7,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    require
     @subscription = Subscription.new
     @subscription.user_id = current_user.id
     @subscription.park_activity_id = params[:park_activity_id]
@@ -28,7 +27,7 @@ class SubscriptionsController < ApplicationController
     park_id = @subscription.park.id
     activity_id = @subscription.activity.id
     @subscription.destroy
-    redirect_to park_activity_path(park_id: park_id, id: activity_id)
+    redirect_back_or_to park_activity_path(park_id: park_id, id: activity_id)
   end
 
   def subscription_join_message
