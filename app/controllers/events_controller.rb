@@ -27,11 +27,31 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
+      @event.count += 1
       redirect_to root_url()
     else
       render 'new'
     end
   end
+
+  # def attend
+  #   @event = params[:event]
+  #   @event.attendees << current_user
+  #   event_park = @event.park.id
+  #   event_activity = @event.activity.id
+  #   if @event.save
+  #     @event.count += 1
+  #     redirect_to redirect_to park_activity_path(park_id: event_park, id: event_activity)
+  #   else
+  #     redirect_to redirect_to park_activity_path(park_id: event_park, id: event_activity)
+  #   end
+  # end
+
+  # def stop_attend
+  #   attendee = current_user
+  #   @event.attendee.destroy
+  #   @event.count -=1
+  # end
 
   def show
     @events = Event.find(params[:id])

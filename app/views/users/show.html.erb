@@ -9,10 +9,11 @@
 <% end %>
 
 <% if @user_events.count == 0 %>
-  <h1>You are not currently scheduled to attend any events...<h1>
+  <h3>You are not currently scheduled to attend any events...<h3>
 <% else %>
   <h3>Here is a list of your events</h3>
   <% @user_events.each do |event| %>
-    <p><%= event.activities.name %> @ <%= event.parks.name %></p>
+    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+    => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
   <% end %>
 <% end %>
