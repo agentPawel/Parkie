@@ -41,6 +41,7 @@ class ParticipantsController < ApplicationController
     owner_cell = Event.find(params[:event]).owner.cell
     park = Event.find(params[:event]).park.name
     time = Event.find(params[:event]).date_time
+    activity = Event.find(params[:event]).activity.name
     participant = current_user.username
     body = "PARKIE: Hi #{owner}! #{participant} has just joined your #{activity} event at #{park} for #{time.strftime("%I:%M%p")}!"
     Message.send_message(owner_cell, body)
