@@ -1,9 +1,12 @@
 class SubscriptionsController < ApplicationController
+  before_action :require_login
+
   def new
     @subscription = Subscription.new
   end
 
   def create
+    require
     @subscription = Subscription.new
     @subscription.user_id = current_user.id
     @subscription.park_activity_id = params[:park_activity_id]
@@ -34,9 +37,4 @@ class SubscriptionsController < ApplicationController
     body = "PARKIE: Thank you for subscribing to the #{activity} channel at #{park}!"
     Message.send_message(current_user.cell, body, sub_id)
   end
-
-
-
-
-
 end
