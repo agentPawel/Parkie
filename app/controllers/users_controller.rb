@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_url
+      redirect_to user_path(:id)
     else
       render :new
     end
@@ -17,13 +17,15 @@ class UsersController < ApplicationController
 
   def show
     require_login
-    @user = current_user
+    unless current_user == nil
+      @user = current_user
 
-    # Pulls an array of a users active subscriptions
-    @user_subscriptions = @user.subscriptions
+      # Pulls an array of a users active subscriptions
+      @user_subscriptions = @user.subscriptions
 
-    # Pulls an array of a users current events they are attending
-    @user_events = @user.attended_events
+      # Pulls an array of a users current events they are attending
+      @user_events = @user.attended_events
+    end
   end
 
   def destroy
@@ -36,5 +38,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :username, :cell, :password, :password_confirmation)
+  end
+
+  def require_login
+    unless current_user
+      redirect_to login_url
+    end
   end
 end

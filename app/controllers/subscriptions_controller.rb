@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  before_action :store_return_to
   before_action :require_login
 
   def new
@@ -36,5 +37,17 @@ class SubscriptionsController < ApplicationController
     sub_id = @subscription_id
     body = "PARKIE: Thank you for subscribing to the #{activity} channel at #{park}!"
     Message.send_message(current_user.cell, body, sub_id)
+  end
+
+  private
+
+  def store_return_to
+    session[:return_to] = request.url
+  end
+
+  def require_login
+    unless current_user
+      redirect_to login_url
+    end
   end
 end
