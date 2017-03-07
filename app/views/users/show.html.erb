@@ -18,5 +18,8 @@
   <% @user_events.each do |event| %>
     <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
     => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
+    <%= form_tag(participant_path(event: event), method: 'delete') do %>
+      <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+    <% end %>
   <% end %>
 <% end %>
