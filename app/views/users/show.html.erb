@@ -17,3 +17,7 @@
     => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
   <% end %>
 <% end %>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', "http://localhost:3000/search/new" %>

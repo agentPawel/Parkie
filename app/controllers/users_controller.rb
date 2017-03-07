@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  @user = User.find(params[:id])
+  end
+
   def show
     require_login
     unless current_user == nil
@@ -27,6 +31,9 @@ class UsersController < ApplicationController
       @user_events = @user.attended_events
     end
   end
+
+
+
 
   def destroy
     @user = User.find(params[:id])
