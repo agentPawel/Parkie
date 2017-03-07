@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
 parka = Park.create(
     name: "Art Eggleton Park",
     address: "323 Harbord St, Toronto, ON M6G 1G9"
@@ -51,6 +50,7 @@ parkh =  Park.create(
     name: "Alexandra Park",
     address: "275 Bathurst St, Toronto, ON M5T 2W6"
   )
+
 
 parkh =  Park.create(
     name: "Clarence Square Park",
@@ -149,6 +149,7 @@ ParkActivity.create(park_id: parkf.id, activity_id: tennis.id)
 ParkActivity.create(park_id: parkg.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkg.id, activity_id: splashpad.id)
 ParkActivity.create(park_id: parkg.id, activity_id: dog_park.id)
+<<<<<<< HEAD
 
 ParkActivity.create(park_id: parkh.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkh.id, activity_id: splashpad.id)
@@ -159,6 +160,22 @@ ParkActivity.create(park_id: parkh.id, activity_id: hockey.id)
 
 ParkActivity.create(park_id: parki.id, activity_id: playground.id)
 ParkActivity.create(park_id: parki.id, activity_id: dog_park.id)
+=======
+
+ParkActivity.create(park_id: parkh.id, activity_id: playground.id)
+ParkActivity.create(park_id: parkh.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parkh.id, activity_id: dog_park.id)
+ParkActivity.create(park_id: parkh.id, activity_id: baseball.id)
+ParkActivity.create(park_id: parkh.id, activity_id: skateboarding.id)
+ParkActivity.create(park_id: parkh.id, activity_id: hockey.id)
+
+ParkActivity.create(park_id: parki.id, activity_id: playground.id)
+ParkActivity.create(park_id: parki.id, activity_id: dog_park.id)
+
+ParkActivity.create(park_id: parkj.id, activity_id: playground.id)
+ParkActivity.create(park_id: parkj.id, activity_id: splashpad.id)
+ParkActivity.create(park_id: parkj.id, activity_id: dog_park.id)
+>>>>>>> SetUpActivitiesLinks
 
 ParkActivity.create(park_id: parkj.id, activity_id: playground.id)
 ParkActivity.create(park_id: parkj.id, activity_id: splashpad.id)

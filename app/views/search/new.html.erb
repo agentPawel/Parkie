@@ -1,14 +1,17 @@
+<h1>List of Parks Nearby</h1>
+
 <div class="container">
   <div class="Park_Search">
-    <h1>List of Parks Nearby</h1>
-    <% @parks.each do |park| %>
-      <%= link_to park_path(park.id), :action => 'go'  do %>
-        <h3><%= park.name %></h3>
-        <p><%= park.address %></p>
-      <% end %>
-    <% end %>
+
+    <div id="parks_near_by">
+
+    </div>
+
   </div>
 
+  <div id="map_wrapper">
+      <div id="map_canvas" class="mapping"></div>
+  </div>
 
 
   <div class="Activity Search">
@@ -20,16 +23,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-<% @parks.each do |park| %>
-  <%park.nearbys(1.9).each do |near_park| %>
-    <li><%= link_to near_park.name%> (<%= near_park.distance.round(2)%> kms)</li>
-  <% end %>
-<% end %>
-
- <% @current_location.each do |park|%>
-  <p> <%= park.name %> </p>
-
- <% end %>
