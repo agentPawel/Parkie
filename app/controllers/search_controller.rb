@@ -2,8 +2,14 @@ class SearchController < ApplicationController
 
   def new
     @parks = Park.all
+    if params[:search]
+      @parks = Park.search(params[:search]).order("created_at DESC")
+    else
+      @parks = Park.all.order('created_at DESC')
+    end
     @activities = Activity.all
-    # @current_location = Park.near('361 Montrose Ave Toronto', 1.9)
+
+# @current_location = Park.near('361 Montrose Ave Toronto', 1.9)
   end
 
 
@@ -25,6 +31,7 @@ class SearchController < ApplicationController
     #   link_to near_park.name near_park.distance.round(2) kms)
     # end
   end
+
 
 
 
