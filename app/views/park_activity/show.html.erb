@@ -7,7 +7,7 @@
       <% @park_activity_events.each do |event| %>
       <div class="Container">
         <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with X people!<h3>
-          <button class="join_event_button" name="join_event_button" type="submit">Subscribe to this feed!</button>
+          <button class="join_event_button" name="join_event_button" type="submit">Join Event</button>
       </div>
       <br>
       <%end%>
