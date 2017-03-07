@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    require_login
     unless current_user == nil
       @user = current_user
 
@@ -32,9 +31,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
-
   def destroy
     @user = User.find(params[:id])
     @user.destory
@@ -45,11 +41,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :username, :cell, :password, :password_confirmation)
-  end
-
-  def require_login
-    unless current_user
-      redirect_to login_url
-    end
   end
 end
