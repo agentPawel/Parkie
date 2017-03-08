@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+*,
+*::before,
+*::after, {
+  box-sizing: border-box;
+}
+
+// NAVIGATION BAR
+.nav {
+  height: 80px;
+  width: 100%:
+}
+
+.nav_logo {
+
+}
+
+.nav_links {
+
+}

@@ -8,19 +8,31 @@
   </head>
   <body>
 
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+  <!-- NAVIGATION -->
+  <div class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+      </div>
+      <div class="nav-links">
+        <% if current_user %>
+          <%= link_to "Logout", :logout, method: :post %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", :login %>
+        <% end %>
+      </div>
+    </div>
   </div>
+
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
+
   <%= yield %>
 
+  <div class='footer'>
+    <p>Parkie  &copy; 2017. Created by Frank Burke, Gee Mehra, Pawel Parafianowicz, and Valerie Boem</p>
+  </div>
   </body>
 </html>
