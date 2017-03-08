@@ -15,6 +15,11 @@
   </div>
 
   <div class="field">
+     <%= f.label :avatar %><br />
+     <%= f.file_field :avatar, title: "Please choose image" %>
+  </div>
+
+  <div class="field">
      <%= f.label :password %><br />
      <%= f.password_field :password %>
   </div>

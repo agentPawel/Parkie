@@ -1,4 +1,9 @@
+<% if @user.avatar != ""%>
+    <div><%= image_tag @user.avatar,:class =>'img-circle' %></div>
+<% end %>
+
 <% if @user_subscriptions.count == 0 %>
+
   <h1>Welcome to Parkie!<h1>
   <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
 <% else %>

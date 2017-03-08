@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  mount_uploader :avatar, AvatarUploader
+
 
   has_many :owned_events, class_name: "Event"
   has_many :subscriptions
