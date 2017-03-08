@@ -1,46 +1,52 @@
-<h1><%=@activity.name %> at <%= @park.name %>! </h1>
+<section class="activities">
 
-<% if @subscription == nil %>
-  <%= form_tag(subscriptions_path, method: 'post') do %>
-    <%= hidden_field_tag(:park_activity_id, @park_activity.id) %>
-    <button class="subcribe_button" name="subscribe_button" type="submit">Subscribe!</button>
-  <% end %>
-<% else %>
-    <%= form_tag(subscription_path(id: @subscription.id), method: 'delete') do %>
-      <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
-    <% end %>
-<% end %>
+  <div class="Container1">
+    <h1><%=@activity.name %> at <%= @park.name %>! </h1>
 
-<div class="event_list">
-  <div class="Container">
-
-    <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
-
-    <div class="Events!">
-
-      <% if @park_activity_events == nil %>
-        <h3>There are no scheduled events at this time.</h3>
-      <% else %>
-        <% @park_activity_events.each do |event| %>
-          <div class="Container">
-            <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people!<h3>
-
-            <% unless current_user == nil %>
-              <% if event.attendees.ids.include? current_user.id %>
-                <%= form_tag(participant_path(event: event), method: 'delete') do %>
-                  <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
-                <% end %>
-              <% else %>
-                <%= form_tag(participants_path, method: 'post') %>
-                <%= hidden_field_tag(:event, event.id) %>
-                <button class="join_event_button" name="join_event_button" type="submit">Attend this event!</button>
-              <% end %>
-            <% end %>
-          </div>
+    <% if @subscription == nil %>
+      <%= form_tag(subscriptions_path, method: 'post') do %>
+        <%= hidden_field_tag(:park_activity_id, @park_activity.id) %>
+        <button class="subcribe_button" name="subscribe_button" type="submit">Subscribe!</button>
+      <% end %>
+    <% else %>
+        <%= form_tag(subscription_path(id: @subscription.id), method: 'delete') do %>
+          <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
         <% end %>
-      <%end%>
+    <% end %>
+  </div>
+
+  <div class="event_list">
+    <div class="Container2">
+
+      <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
+
+      <div class="Events!">
+
+        <% if @park_activity_events == nil %>
+          <h3>There are no scheduled events at this time.</h3>
+        <% else %>
+          <% @park_activity_events.each do |event| %>
+            <div class="Container3">
+              <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people!<h3>
+
+              <% unless current_user == nil %>
+                <% if event.attendees.ids.include? current_user.id %>
+                  <%= form_tag(participant_path(event: event), method: 'delete') do %>
+                    <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+                  <% end %>
+                <% else %>
+                  <%= form_tag(participants_path, method: 'post') %>
+                  <%= hidden_field_tag(:event, event.id) %>
+                  <button class="join_event_button" name="join_event_button" type="submit">Attend this event!</button>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        <%end%>
+      </div>
     </div>
   </div>
-</div>
 
-<%= link_to "Create Event!", new_park_activity_event_path(params[:park_id], @activity.id) %>
+  <%= link_to "Create Event!", new_park_activity_event_path(params[:park_id], @activity.id) %>
+
+</section>

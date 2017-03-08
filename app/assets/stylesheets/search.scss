@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// body {
-//   background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
-//   background-repeat: round;
-// }
+body {
+  background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
+  background-repeat: round;
+}
 
 .header {
   margin-top: 65px;
@@ -51,10 +51,11 @@
   color: white;
 }
 
-.collapsed {
-  background-color: #333;
-  color: white;
-}
+// .collapsed {
+//   background-color: #333;
+//   color: white;
+//   padding: 20px;
+// }
 
 .park_li li {
     background-color: black;
@@ -63,11 +64,29 @@
 }
 
 .ParkList {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    // position: relative;
+    // display: block;
+    // padding: 10px 15px;
+    // background-color: #fff;
+    // border: 1px solid #ddd;
+}
+
+#parks_near_by li{
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: black;
+}
+
+#parks_near_by h3 {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: black;
+  font-size: 20px;
+  margin: 0;
 }
 
 .activity_li li {
@@ -77,16 +96,10 @@
   padding: 20px;
 }
 
-
-
 .list-group-item a {
   position: relative;
   display: block;
   padding: 10px 15px;
   background-color: #fff;
   border: 1px solid #ddd;
-}
-
-.collapseActivity:first-child {
-  padding: 0;
 }

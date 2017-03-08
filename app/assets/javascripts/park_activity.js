@@ -16,7 +16,7 @@ $(function(){
     }).done(function(parks){
         // console.log(parks)
         for (var i=0; i < parks.length; i++)
-        $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3> Address: " + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
+        $('#parks_near_by').prepend("<h3><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h3><li> Address: " + parks[i].address + "</li><li>Distance: " + parks[i].distance.toFixed(2) + " km</li>");
         parksList(parks)
       })
   });
@@ -31,7 +31,7 @@ $(function(){
     // Info Window Content
     var infoWindowContent = []
     for (var i=0; i < parks.length; i++) {
-      infoWindowContent.push(["<div class='info_content'><h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a><p>" + parks[i].address + "<p>"]);
+      infoWindowContent.push(["<div class='info_content'><li><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a><p>" + parks[i].address + "<p>"]);
     }
     console.log(infoWindowContent);
 
