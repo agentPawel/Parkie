@@ -26,6 +26,9 @@ class UsersController < ApplicationController
       # Pulls an array of a users active subscriptions
       @user_subscriptions = @user.subscriptions
 
+      # Pulls a users owned events
+      @owned_events = @user.owned_events
+
       # Pulls an array of a users current events they are attending
       @user_events = @user.attended_events
     end

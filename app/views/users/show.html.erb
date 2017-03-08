@@ -11,6 +11,17 @@
   <% end %>
 <% end %>
 
+<% if @owned_events.count != 0 %>
+  <h3>Here are your events</h3>
+  <% @owned_events.each do |event| %>
+    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+      => Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!</p>
+    <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
+      <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+    <% end %>
+  <% end %>
+<% end %>
+
 <% if @user_events.count == 0 %>
   <h3>You are not currently scheduled to attend any events...<h3>
 <% else %>
@@ -24,6 +35,4 @@
   <% end %>
 <% end %>
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', "http://localhost:3000/search/new" %>
+<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
