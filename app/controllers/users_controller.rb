@@ -19,6 +19,15 @@ class UsersController < ApplicationController
   @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to user_path(:id)
+    else
+      render :new
+    end
+  end
+
   def show
     unless current_user == nil
       @user = current_user
