@@ -33,10 +33,6 @@ body {
     width: 100%;
 }
 
-// .containerImage {
-//   margin-top: 50px;
-// }
-
 .map_wrapper {
   width: 100%;
 }
@@ -64,6 +60,14 @@ body {
     background-color: black;
     color: white;
     padding: 20px;
+}
+
+.ParkList {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
 .activity_li li {
