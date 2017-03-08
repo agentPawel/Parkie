@@ -23,13 +23,20 @@
 // NAVIGATION BAR
 .nav {
   height: 80px;
-  width: 100%:
+  width: 100%;
+  position: fixed;
+  opacity: 0.4;
 }
 
 .nav_logo {
-
+  float: left;
+  width: 25%;
 }
 
 .nav_links {
-
+  float: right;
+  width: 75%;
+  text-align: right;
 }
+
+// FOOTER
