@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+ *,
+ *::before,
+ *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ }
+
+body {
+  margin: 0;
+}
+
+// unvisited link
+a:link {
+   color: red;
+}
+
+/* visited link */
+a:visited {
+   color: #006738;
+}
+
+/* mouse over link */
+a:hover {
+  backcolor: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+/* Change the color of links on hover */
+.nav_links a:hover {
+    background-color: #006738;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.nav_links a.active {
+    background-color: #006738;
+    color: white;
+}
+
+// NAVIGATION BAR
+.nav {
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav_logo {
+  padding-top: 10px;
+  float: left;
+  display: block;
+}
+
+.nav_logo img {
+  height: 60px;
+}
+
+.nav_links {
+  padding: 28px;
+  height: 60px;
+  float: right;
+  display: block;
+  text-align: center;
+}
+
+// FOOTER
+.footer {
+  height: 50px;
+  width: 100%;
+  background-color: #006738;
+}
+
+.footer p {
+  padding-top: 15px;
+  color: white;
+  text-align: center;
+}

@@ -1,7 +1,9 @@
 <h3><%= @park.name %><h3>
 <p><%= @park.address %></p>
 
+<ul class = "activity_list">
 <% @park_activities.each do |activity| %>
-  <h3><%= link_to activity.name, park_activity_path(params[:id], activity.id) %><h3>
+  <button class = "activity"><%= link_to activity.name, park_activity_path(params[:id], activity.id) %></li>
 <%end%>
-<h3><%= link_to "Back To Search Results", :back %></h3>
+</ul>
+<h3 class = "back_link"><%= link_to "Back To Search Results", :back %></h3>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :participants
   resources :subscriptions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show, :edit]
+  resources :users
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :search, only: [:new, :create, :show]
 
