@@ -25,27 +25,39 @@ body {
   margin: 0;
 }
 
- // unvisited link
- a:link {
-     color: red;
- }
+// unvisited link
+a:link {
+   color: red;
+}
 
- /* visited link */
- a:visited {
-     color: #006738;
- }
+/* visited link */
+a:visited {
+   color: #006738;
+}
 
- /* mouse over link */
- a:hover {
-     backcolor: hotpink;
- }
+/* mouse over link */
+a:hover {
+  backcolor: hotpink;
+}
 
- /* selected link */
- a:active {
-     color: blue;
- }
+/* selected link */
+a:active {
+  color: blue;
+}
 
- // NAVIGATION BAR
+/* Change the color of links on hover */
+.nav_links a:hover {
+    background-color: #006738;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.nav_links a.active {
+    background-color: #006738;
+    color: white;
+}
+
+// NAVIGATION BAR
 .nav {
   padding: 0;
   margin: 0;
