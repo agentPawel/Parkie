@@ -15,11 +15,16 @@ $(function(){
       },
       dataType: 'json'
     }).done(function(parks){
-        // console.log(parks)
+        console.log(parks)
+        console.log("here I am")
         for (var i=0; i < parks.length; i++)
         $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3> Address: " + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
-        parksList(parks)
-      })
+
+    }).fail(function(jqXHR, textStatus, errorThrown){
+          console.log('Ajax Request Failed');
+          console.log(jqXHR);
+        })
+
   });
 
   function parksList(parks) {

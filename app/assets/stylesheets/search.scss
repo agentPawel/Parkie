@@ -2,15 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
+  background-repeat: round;
+}
+
 .header {
   margin-top: 65px;
+}
+
+.mobileImage {
+  margin-top: 40px;
 }
 
 .mobileImage img {
   width: 100%
 }
 
-.searchPage {
+.searchPage ul {
   background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
   background-repeat: round;
 }
@@ -19,7 +28,7 @@
   position: relative;
     margin-bottom: 0;
     z-index: 1;
-    margin-top: -59px;
+    margin-top: -152px;
     margin-left: 0;
     width: 100%;
 }
@@ -29,10 +38,6 @@
 // }
 
 .map_wrapper {
-  width: 100%;
-}
-
-.containerPark img {
   width: 100%;
 }
 
