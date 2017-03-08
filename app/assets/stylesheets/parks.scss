@@ -1,3 +1,25 @@
 // Place all the styles related to the Parks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+button.activity {
+    background-color: #55BB76;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    text-align: left;
+    border: bold;
+    outline: none;
+    transition: 0.4s;
+    font-size: 16px;
+}
+
+button.activity a {
+    font-family: Amaranth;
+    color: white;
+    text-decoration: none;
+
+}
