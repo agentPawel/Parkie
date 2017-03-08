@@ -42,15 +42,73 @@
     <div id="map_canvas" class="mapping"></div>
 </div>
 
+
+
+<!-- <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion">
+        Search by Parks</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <span id="parks_near_by"></span>
+    </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Search by Park</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body" id="parks_near_by"></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse2">Search by Activities</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="Activity Search">
+          <% @activities.each do |activity| %>
+            <%= link_to park_list_path(activity.id), :action => 'go'  do %>
+              <h3><%= activity.name %></h3>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--
 <div class="container">
   <div class="Park_Search">
     <h1>Search by Parks</h1>
     <div id="parks_near_by">
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="Activity Search">
+<!-- <div class="Activity Search">
   <h1>Search by Activities</h1>
   <% @activities.each do |activity| %>
     <%= link_to park_list_path(activity.id), :action => 'go'  do %>
@@ -58,4 +116,4 @@
     <% end %>
   <% end %>
 
-</div>
+</div> -->
