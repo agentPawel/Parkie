@@ -3,7 +3,57 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .activities {
-  text-align: center;
-  margin: 25% 0 25% 0;
-  height: 32em;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1%;
+  color: black;
+  margin: 25% 3% 8% 3%;
+}
+
+.Container1 form {
+  color: black;
+}
+
+.Container1 h1 {
+  font-size: 1.5em;
+  padding: 1%;
+}
+
+button {
+  border-color: black;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px;
+}
+
+.card-block {
+  margin-bottom: 20px;
+}
+
+.card-block h3 {
+  text-decoration: underline;
+}
+
+.join_event_button {
+  color: black;
+}
+
+.Container1 button {
+  color: black;
+}
+
+.Container1 form {
+display: inline-block;
+}
+
+.new_event_button a {
+  color: black;
+}
+
+.Container3 h5 {
+  font-size: 20px;
+}
+
+
+.Container5 h5 {
+  font-weight: 300;
 }
