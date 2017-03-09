@@ -23,6 +23,7 @@
 
 body {
   margin: 0;
+  position: relative;
 }
 
 // unvisited link
@@ -60,6 +61,7 @@ a:active {
 // NAVIGATION BAR
 .nav {
   height: 80px;
+  z-index: 100;
 }
 
 .nav_logo {
