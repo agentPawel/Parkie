@@ -7,5 +7,5 @@ class Event < ApplicationRecord
   has_one :park, through: :park_activity
   has_one :activity, through: :park_activity
 
-  validates :date_time, :user_id, :park_activity_id, presence: true
+  validates :date_time, :user_id, :park_activity_id, :count, presence: true
 end
