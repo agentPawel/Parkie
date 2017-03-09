@@ -17,7 +17,7 @@ $(function(){
     }).done(function(parks){
         // console.log(parks)
         for (var i=0; i < parks.length; i++)
-        $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3> Address: " + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
+        $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3>" + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
         parksList(parks)
       })
   });

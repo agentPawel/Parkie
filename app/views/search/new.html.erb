@@ -106,6 +106,7 @@
           <% @activities.each do |activity| %>
             <%= link_to park_list_path(activity.id), :action => 'go'  do %>
               <h3><%= activity.name %></h3>
+              <%= image_tag activity.image,:class =>'img-circle' %>
             <% end %>
           <% end %>
         </div>
