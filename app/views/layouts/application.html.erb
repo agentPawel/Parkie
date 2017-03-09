@@ -12,16 +12,22 @@
   <!-- NAVIGATION -->
   <div class="nav">
     <div class="nav-container">
-      <div class="nav_logo">
-        <%=image_tag("Parkie.png")%>
-      </div>
-      <div class="nav_links">
-        <% if current_user %>
-          <%= link_to "Logout", :logout, method: :post %>
-        <% else %>
-          <%= link_to "Register", new_user_path %> |
-          <%= link_to "Login", :login %>
-        <% end %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="nav_logo">
+            <%=image_tag("Parkie.png")%>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="nav_links">
+            <% if current_user %>
+              <%= link_to "Logout", :logout, method: :post %>
+            <% else %>
+              <%= link_to "Register", new_user_path %> |
+              <%= link_to "Login", :login %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

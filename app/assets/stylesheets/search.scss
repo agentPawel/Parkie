@@ -51,7 +51,8 @@ video#frisbee {
   width: 150px;
   height: 150px;
   margin: auto;
-  padding-top: 40px;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .about_description {
@@ -59,10 +60,17 @@ video#frisbee {
   display: block;
   margin: auto;
   padding: 10px;
+  text-align: center;
+}
+
+.about_description h3 {
+  font-size: 26px;
+  margin: 0;
 }
 
 .about_description p {
   margin: 0;
+  text-align: center;
 }
 
 .round-button {
