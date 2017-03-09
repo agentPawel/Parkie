@@ -74,14 +74,19 @@ a:active {
 }
 
 .nav_logo {
-  padding-top: 10px;
+  margin: 10px;
+  width: 75px;
+  height: 75px;
+  padding-top: 5px;
   float: left;
   display: block;
-  z-index: 100;
+  background-color: white;
+  border-radius: 50%;
 }
 
 .nav_logo img {
   height: 60px;
+  margin-left: -11px;
 }
 
 .nav_links {
