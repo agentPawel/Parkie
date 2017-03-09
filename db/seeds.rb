@@ -67,49 +67,61 @@ parkj =  Park.create(
     address: "100 Brunswick Ave, Toronto, ON M5S 2M2"
   )
 
-basketball = Activity.create(
-        name: "Basketball"
-      )
+  basketball = Activity.create(
+          name: "Basketball",
+          image: 'basketball.png'
+        )
 
-tennis = Activity.create(
-        name: "Tennis"
-      )
+  tennis = Activity.create(
+          name: "Tennis",
+          image: 'tennis.png'
+        )
 
-splashpad = Activity.create(
-        name: "Splashpad"
-)
+  splashpad = Activity.create(
+          name: "Splashpad",
+          image: 'wading_pool.png'
+  )
 
-dog_park = Activity.create(
-        name: "Dog Park"
-)
+  dog_park = Activity.create(
+          name: "Dog Park",
+          image: 'dog.png'
+  )
 
-playground = Activity.create(
-        name: "Playground"
-)
+  playground = Activity.create(
+          name: "Playground",
+          image: 'playground.png'
 
-soccer = Activity.create(
-        name: "Soccer"
-)
+  )
+  #
+  soccer = Activity.create(
+          name: "Soccer",
+            image: 'soccer.png'
+  )
 
-hockey = Activity.create(
-        name: "Hockey"
-)
+  hockey = Activity.create(
+          name: "Hockey",
+          image: 'hockey.png'
+  )
 
-baseball = Activity.create(
-        name: "Baseball"
-)
+  baseball = Activity.create(
+          name: "Baseball",
+          image: 'baseball.png'
+  )
 
-bocce = Activity.create(
-        name: "Bocce Ball"
-)
+  bocce = Activity.create(
+          name: "Bocce Ball",
+          image: 'bocce.png'
+  )
 
-ping_pong = Activity.create(
-        name: "Ping Pong"
-)
+  ping_pong = Activity.create(
+          name: "Ping Pong",
+          image: 'ping_pong.png'
+  )
 
-skateboarding = Activity.create(
-        name: "Skateboarding"
-)
+  skateboarding = Activity.create(
+          name: "Skateboarding",
+          image: 'skateboarding.png'
+  )
 
 ParkActivity.create(park_id: parka.id, activity_id: basketball.id)
 ParkActivity.create(park_id: parka.id, activity_id: splashpad.id)
