@@ -1,4 +1,15 @@
 <%= form_for [@park, @activity, @event] do |f| %>
+<br>
+<% if @event.errors.any? %>
+     <div class="alert alert-danger">
+       <h4>Reservation not confirmed because:</h4>
+       <ul>
+         <% @event.errors.full_messages.each do |message| %><br>
+           <%= message %>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
   <div class="field">
      <%= f.label :date_time %><br />
      <%= f.datetime_select :date_time, ampm:true %>
