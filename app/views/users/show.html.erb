@@ -1,90 +1,66 @@
 <section class="users">
-
-  <div class="buttons">
-    <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseSubscriptions" aria-expanded="false" aria-controls="collapseExample">
-      <h1>Subscriptions</h1>
-    </button>
-    <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseYourEvents" aria-expanded="false" aria-controls="collapseExample">
-      <h1>Your Events</h1>
-    </button>
-    <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseAttending" aria-expanded="false" aria-controls="collapseExample">
-      <h1>Attending</h1>
-    </button>
+  <div class="control_bar">
+    <%= link_to 'Edit Account', edit_user_path(@user) %> | <%= link_to 'Back to Search', root_url %>
   </div>
-  <div>
-    <div class="dropdown open" id="collapseSubscriptions">
-      <div class="card card-block">
-        <div class="subscriptions">
-          <% if @user_subscriptions.count == 0 %>
-            <h1>Welcome to Parkie!<h1>
-            <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
+    <div class="buttons">
+      <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseSubscriptions" aria-expanded="false" aria-controls="collapseExample">
+        <h1>Subscriptions</h1>
+      </button>
+      <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseYourEvents" aria-expanded="false" aria-controls="collapseExample">
+        <h1>Your Events</h1>
+      </button>
+      <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseAttending" aria-expanded="false" aria-controls="collapseExample">
+        <h1>Attending</h1>
+      </button>
+    </div>
+    <div>
+      <div class="dropdown open" id="collapseSubscriptions">
+        <div class="card card-block">
+          <div class="subscriptions">
+            <% if @user_subscriptions.count == 0 %>
+              <h1>Welcome to Parkie!<h1>
+              <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
+            <% else %>
+              <h3>Your subscriptions</h3>
+              <% @user_subscriptions.each do |subscription| %>
+                <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
+                <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
+                  <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="collapseYourEvents">
+        <div class="card card-block">
+          <% if @owned_events.count != 0 %>
+            <h3>Your events</h3>
+            <% @owned_events.each do |event| %>
+              <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+                => Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!</p>
+              <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
+                <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="collapse" id="collapseAttending">
+        <div class="card card-block">
+          <% if @user_events.count == 0 %>
+            <h3>You are not currently scheduled to attend any events...<h3>
           <% else %>
-            <h3>Your subscriptions</h3>
-            <% @user_subscriptions.each do |subscription| %>
-              <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
-              <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
-                <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+            <h3>Events you are attending</h3>
+            <% @user_events.each do |event| %>
+              <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+              => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
+              <%= form_tag(participant_path(event: event), method: 'delete') do %>
+                <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
               <% end %>
             <% end %>
           <% end %>
         </div>
       </div>
     </div>
-    <div class="collapse" id="collapseYourEvents">
-      <div class="card card-block">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-    <div class="collapse" id="collapseAttending">
-      <div class="card card-block">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="subscriptions">
-    <% if @user_subscriptions.count == 0 %>
-      <h1>Welcome to Parkie!<h1>
-      <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
-    <% else %>
-      <h3>Your subscriptions</h3>
-      <% @user_subscriptions.each do |subscription| %>
-        <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
-        <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
-          <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-
-<div class="owned_events">
-<% if @owned_events.count != 0 %>
-  <h3>Your events</h3>
-  <% @owned_events.each do |event| %>
-    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
-      => Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!</p>
-    <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
-      <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
-    <% end %>
-  <% end %>
-<% end %>
-
-<% if @user_events.count == 0 %>
-  <h3>You are not currently scheduled to attend any events...<h3>
-<% else %>
-  <h3>Events you are attending</h3>
-  <% @user_events.each do |event| %>
-    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
-    => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
-    <%= form_tag(participant_path(event: event), method: 'delete') do %>
-      <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
-    <% end %>
-  <% end %>
-<% end %>
-</div>
-<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
-
-</section>
+  </section>
