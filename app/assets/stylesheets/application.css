@@ -40,3 +40,9 @@
  .navbar-header div {
    width: 100%
  }
+
+.navbar-header button {
+  border-color: #006738;
+ }
+
+.navbar-default .navbar-toggle

@@ -1,3 +1,45 @@
 // Place all the styles related to the Parks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ParksShow {
+  padding: 7%;
+  margin-top: 52px;
+  width: 90%;
+  text-align: justify;
+  margin-left: 5%;
+  color: #006738;
+  font-family: proxima-nova;
+  letter-spacing: .0192px;
+  margin-bottom: 5%;
+}
+
+.Name {
+  text-align: left;
+}
+
+.Address {
+  font-size: 18px;
+}
+
+.Available_Activities {
+  font-size: 25px;
+}
+
+.ParksShow a {
+  color: #006738;
+  font-size: 20px;
+}
+
+.ParksShow a:visited {
+  color: #006738;
+}
+
+.ParksShow a {
+  color: #006738;
+}
+
+.BackSearch {
+  text-align: right;
+  font-size: 18px;
+}

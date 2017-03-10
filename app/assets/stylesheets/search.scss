@@ -43,11 +43,11 @@
 
 .searchPage ul {
   position: relative;
-    margin-bottom: 0;
-    z-index: 1;
-    margin-top: 0px;
-    margin-left: 0;
-    width: 100%;
+  margin-bottom: 0;
+  z-index: 1;
+  margin-top: 0px;
+  margin-left: 0;
+  width: 100%;
 }
 
 .list-group {
@@ -80,15 +80,6 @@
   font-weight: 300;
 }
 
-.park_li li {
-  // color: #006738;
-  // padding: 20px;
-  // border: 1px solid #006738;
-  // width: 75%;
-  // margin-left: 12.5%;
-  // list-style: none;
-}
-
 .Or {
   margin-top: 5%;
 }
@@ -102,14 +93,6 @@
   list-style: none;
 }
 
-#parks_near_by li{
-  // position: relative;
-  // display: block;
-  // padding: 10px 15px;
-  // background-color: #fff;
-  // color: #006738;
-}
-
 #parks_near_by li:visited {
   color: #006738
 }
@@ -119,24 +102,13 @@
   display: block;
   color: #006738;
   margin: 0;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  font-size: 15px;
+  line-height: 15px;
+  margin: 10px;
 }
 
 #parks_near_by a:visited {
   color: #006738
-}
-
-
-
-.activity_li li {
-  // color: #006738;
-  // padding: 20px;
-  // border: 1px solid #006738;
-  // width: 75%;
-  // margin-left: 12.5%;
-  // list-style: none;
 }
 
 .list-group-item a {

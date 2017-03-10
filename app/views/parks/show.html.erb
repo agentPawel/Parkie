@@ -1,7 +1,15 @@
-<h3><%= @park.name %><h3>
-<p><%= @park.address %></p>
-
-<% @park_activities.each do |activity| %>
-  <h3><%= link_to activity.name, park_activity_path(params[:id], activity.id) %><h3>
-<%end%>
-<h3><%= link_to "Back To Search Results", :back %></h3>
+<section class="ParksShow">
+  <div class="hidden-sm">
+    <h1 class="Name"><%= @park.name %></h1>
+    <h1>–</h1>
+    <h3 class="Address"><%= @park.address %></h3>
+    <h1>–</h1>
+    <div class="Activities_of_park">
+      <h2 class="Available_Activities">Available Activities:</h2>
+      <% @park_activities.each do |activity| %>
+        <h3><%= link_to activity.name, park_activity_path(params[:id], activity.id) %><h3>
+      <%end%>
+    </div>
+    <h3 class="BackSearch"><%= link_to "Back To Search", :back %></h3>
+  </div>
+</section>
