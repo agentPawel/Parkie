@@ -1,8 +1,10 @@
 jQuery(function($) {
     // Asynchronously Load the map API
+    if ($('#map_canvas').length > 0) {
     var script = document.createElement('script');
     script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyDaMOv8g5liwrazAzGhui5W4CpzA4FFhq8&callback=initialize&libraries=places";
     document.body.appendChild(script);
+    }
 });
 
 function initialize() {

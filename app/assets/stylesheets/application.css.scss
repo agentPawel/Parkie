@@ -26,7 +26,6 @@ body {
   // padding-top: 100px;
 }
 
-
 body {
   margin: 0;
   position: relative;
@@ -102,6 +101,15 @@ a:active {
   height: 60px;
   float: right;
 }
+
+.nav_links_alt {
+  padding: 25px;
+  height: 60px;
+  float: right;
+  color: #006738;
+  font-size: 18px;
+}
+
 
 .nav_links a {
   padding: 25px 5px;

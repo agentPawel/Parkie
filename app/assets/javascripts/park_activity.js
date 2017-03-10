@@ -1,26 +1,27 @@
 
 $(function(){
+  if ($('#map_canvas').length > 0){
+    navigator.geolocation.getCurrentPosition(function(location) {
+    console.log(location.coords.latitude);
+    console.log(location.coords.longitude);
+    console.log(location.coords.accuracy);
 
-  navigator.geolocation.getCurrentPosition(function(location) {
-  console.log(location.coords.latitude);
-  console.log(location.coords.longitude);
-  console.log(location.coords.accuracy);
-
-    $.ajax({
-      url: '/parks_near_by',
-      method: 'POST',
-      data: {
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude
-      },
-      dataType: 'json'
-    }).done(function(parks){
-        // console.log(parks)
-        for (var i=0; i < parks.length; i++)
-        $('#parks_near_by').prepend("<h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3>" + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3>");
-        parksList(parks)
-      })
-  });
+     $.ajax({
+        url: '/parks_near_by',
+        method: 'POST',
+        data: {
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude
+        },
+        dataType: 'json'
+      }).done(function(parks){
+          // console.log(parks)
+          for (var i=0; i < parks.length; i++)
+          $('#parks_near_by').prepend("<div class='col-md-6'><h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</a></h2><h3>" + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3></div>");
+          parksList(parks)
+        })
+    });
+  }
 
   function parksList(parks) {
     var bounds = new google.maps.LatLngBounds();

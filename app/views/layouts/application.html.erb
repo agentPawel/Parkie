@@ -10,28 +10,53 @@
   <body>
 
   <!-- NAVIGATION -->
-  <div class="nav">
-    <div class="nav-container">
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="nav_logo">
-            <%=link_to image_tag("Parkie.png"), root_url%>
+  <% if current_page?(root_path) %>
+    <div class="nav">
+      <div class="nav-container">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="nav_logo">
+              <%=link_to image_tag("Parkie.png"), root_url%>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="nav_links">
-            <% if current_user %>
-              <%= link_to "Logout", :logout, method: :post %>
-              <%= link_to "My Profile", user_path(current_user.id) %>
-            <% else %>
-              <%= link_to "Register", new_user_path %> |
-              <%= link_to "Login", :login %>
-            <% end %>
+          <div class="col-xs-6">
+            <div class="nav_links">
+              <% if current_user %>
+                <%= link_to "Logout", :logout, method: :post %>
+                <%= link_to "My Profile", user_path(current_user.id) %>
+              <% else %>
+                <%= link_to "Register", new_user_path %> |
+                <%= link_to "Login", :login %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="nav">
+      <div class="nav-container">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="nav_logo">
+              <%=link_to image_tag("Parkie.png"), root_url%>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="nav_links_alt">
+              <% if current_user %>
+                <%= link_to "Logout", :logout, method: :post %>
+                <%= link_to "My Profile", user_path(current_user.id) %>
+              <% else %>
+                <%= link_to "Register", new_user_path %> |
+                <%= link_to "Login", :login %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
   <div>
     <p id="notice"><%= flash[:notice] %></p>

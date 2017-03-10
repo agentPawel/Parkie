@@ -8,6 +8,23 @@ img.img-circle {
     border: solid black 4px;
 };
 
+.show_page_content {
+  margin-left: 50px;
+  padding: 100px 0 100px 0;
+}
+
+.profile_pic {
+  padding-top: 100px;
+}
+
+.user_p {
+    font-family: 'Rancho';
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(0, 128, 0, 0.12);
+    padding: 30px;
+}
+
 
 // #notice{
 //   font-family: 'Rancho';
@@ -23,20 +40,3 @@ img.img-circle {
 //   background-color: white;
 //   padding: 30px;
 // }
-
-.show_page_content {
-  margin-left: 50px;
-  padding: 100px 0 100px 0;
-}
-
-.profile_pic {
-  padding-top: 100px;
-}
-
-.user_p {
-    font-family: 'Rancho';
-    font-size: 35px;
-    font-weight: bold;
-    background-color: rgba(0, 128, 0, 0.12);
-    padding: 30px;
-}

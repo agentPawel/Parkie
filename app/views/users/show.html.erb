@@ -1,16 +1,16 @@
 <div class="show_page_content">
   <% if @user.avatar != ""%>
-      <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br><%= link_to "Logout", :logout, method: :post %>
+      <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br> 
       </div>
 
-      <% else %>
+     <% else %>
       <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
 
-  <% end %>
+ <% end %>
 
-  <% if @user_subscriptions.count == 0 %>
+ <% if @user_subscriptions.count == 0 %>
 
-    <h1>Welcome to Parkie <%=@user.first_name%>!<h1>
+   <h1>Welcome to Parkie <%=@user.username%>!<h1>
     <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
   <% else %>
     <h3>Here is a list of your subscriptions</h3>
@@ -26,9 +26,9 @@
     <h3>Here are your events</h3>
     <% @owned_events.each do |event| %>
       <p class="user_p"><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
-        Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!  <br><br>    <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+        Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= pluralize(event.count, "person" ) %> attending!  <br><br>    <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
       </p>
-      <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
+      <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id, event: event), method: 'delete') do %>
       <% end %>
     <% end %>
   <% end %>
