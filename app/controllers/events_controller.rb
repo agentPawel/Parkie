@@ -47,10 +47,12 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:event])
-    @event.destroy
-    redirect_to user_path(current_user.id)
-  end
+      @event = Event.find(params[:event])
+      if @event.destroy
+       joiner_event_cancellation_message
+      end
+      redirect_to user_path(current_user.id)
+    end
 
   def event_params
     params.require(:event).permit(:date_time, :user_id, :park_activity_id, :description, :count)
@@ -79,6 +81,23 @@ class EventsController < ApplicationController
         Message.send_message(cell, body)
         unless @event.owner.cell == User.find(subscription.user_id).cell
         end
+      end
+    end
+  end
+
+  def joiner_event_cancellation_message
+    participants = @event.participants
+    e_owner = @event.owner.username
+    park = @event.park_activity.park.name
+    activity = @event.park_activity.activity.name
+    time = @event.date_time
+
+    participants.each do |participant|
+      if User.find(participant.user_id).cell != nil && User.find(participant.user_id).cell != ""
+        name = User.find(participant.user_id).username
+        cell = User.find(participant.user_id).cell
+        body = "Hey #{name}, #{e_owner} has just cancelled their #{activity} event at #{park} for #{time.strftime("%I:%M%p")} ! :("
+        Message.send_message(cell, body)
       end
     end
   end
