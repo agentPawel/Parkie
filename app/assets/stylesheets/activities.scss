@@ -3,14 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .activities {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1%;
-  color: black;
-  margin: 25% 3% 8% 3%;
+  padding: 7%;
+  margin-top: 52px;
+  width: 90%;
+  text-align: justify;
+  margin-left: 5%;
+  color: #006738;
+  font-family: proxima-nova;
+  letter-spacing: .0192px;
+  margin-bottom: 5%;
 }
 
 .Container1 form {
-  color: black;
+  color: #006738;
 }
 
 .Container1 h1 {
@@ -30,15 +35,19 @@ button {
 }
 
 .card-block h3 {
-  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  margin-bottom: 20px;
 }
 
 .join_event_button {
-  color: black;
+  color: #006738;
 }
 
 .Container1 button {
-  color: black;
+  color: #006738;
 }
 
 .Container1 form {
@@ -46,7 +55,7 @@ display: inline-block;
 }
 
 .new_event_button a {
-  color: black;
+  color: #006738;
 }
 
 .Container3 h5 {

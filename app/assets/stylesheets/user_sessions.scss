@@ -1,3 +1,25 @@
 // Place all the styles related to the UserSessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_login {
+  padding: 7%;
+  margin-top: 52px;
+  width: 90%;
+  text-align: justify;
+  margin-left: 5%;
+  color: #006738;
+  font-family: proxima-nova;
+  letter-spacing: .0192px;
+  margin-bottom: 5%;
+}
+
+.user_login a {
+  color: #006738;
+  margin-top: 20px;
+}
+
+.user_login a:visited {
+  color: #006738;
+  margin-top: 20px;
+}
