@@ -25,6 +25,14 @@
    margin-bottom: 0;
  }
 
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand img {
+  margin-top: -5%;
+}
+
  .navbar-default {
    border-color: white;
  }
