@@ -74,6 +74,7 @@ a:active {
 // NAVIGATION BAR
 .nav {
   height: 80px;
+  width: 100%;
   z-index: 100;
   position: absolute;
 }
@@ -95,12 +96,15 @@ a:active {
 }
 
 .nav_links {
-  padding: 28px;
+  padding: 25px;
   height: 60px;
   float: right;
-  display: block;
-  text-align: center;
-  z-index: 100;
+}
+
+.nav_links a {
+  padding: 25px 5px;
+  font-size: 26px;
+  color: white;
 }
 
 // FOOTER

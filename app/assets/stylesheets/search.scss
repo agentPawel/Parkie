@@ -24,7 +24,7 @@ video#frisbee {
   background-color: #55bb76;
   margin: auto;
   margin-top: 150px;
-  border-radius: 5px;
+  // border-radius: 5px;
   width: 155px;
   height: 65px;
 }
@@ -43,7 +43,7 @@ video#frisbee {
 }
 
 .about_parkie {
-  height: 250px;
+  height: 200px;
 }
 
 .about_icons {
@@ -51,7 +51,8 @@ video#frisbee {
   width: 150px;
   height: 150px;
   margin: auto;
-  padding-top: 40px;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .about_description {
@@ -59,10 +60,17 @@ video#frisbee {
   display: block;
   margin: auto;
   padding: 10px;
+  text-align: center;
+}
+
+.about_description h3 {
+  font-size: 26px;
+  margin: 0;
 }
 
 .about_description p {
   margin: 0;
+  text-align: center;
 }
 
 .round-button {
@@ -90,8 +98,6 @@ video#frisbee {
 .about_container {
  width: 100%;
 }
-
-
 
 div#search-page-panel {
     margin-bottom: 0px;
