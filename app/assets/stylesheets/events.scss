@@ -1,3 +1,36 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_event {
+  margin-top: 15%;
+  padding: 7% 7% 0 7%;
+  width: 90%;
+  margin-left: 5%;
+  color: #006738;
+  font-family: proxima-nova;
+  letter-spacing: .0192px;
+}
+
+.Create_Event {
+  font-size: 25px;
+  text-align: left;
+}
+
+.Form {
+  margin-top: -12%;
+}
+
+.field {
+  padding: 5px 0;
+}
+
+.Back_Search {
+  text-align: right;
+  font-size: 18px;
+  width: 90%;
+}
+
+.Back_Search a:visited {
+  color: #006738;
+}
