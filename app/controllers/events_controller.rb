@@ -36,7 +36,7 @@ class EventsController < ApplicationController
       end
       subscriber_event_notification_message
         @event.count += 1
-      redirect_to root_url()
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
