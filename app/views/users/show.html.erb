@@ -1,5 +1,8 @@
 <% if @user.avatar != ""%>
     <div><%= image_tag @user.avatar,:class =>'img-circle' %></div>
+    <% else %>
+    <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
+
 <% end %>
 
 <% if @user_subscriptions.count == 0 %>
