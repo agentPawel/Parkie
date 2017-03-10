@@ -21,6 +21,18 @@
    list-style-type: none;
  }
 
+ #myNavbar {
+   margin-bottom: 0;
+ }
+
+ .navbar-default {
+   border-color: white;
+ }
+
+ .navbar {
+   border-color: white;
+ }
+
  .navbar-inverse .navbar-brand {
    margin-left: 5%;
  }

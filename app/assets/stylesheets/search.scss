@@ -2,104 +2,163 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
-  background-repeat: round;
-}
-
 .header {
   margin-top: 65px;
 }
 
-.mobileImage {
-  margin-top: 40px;
-}
-
-.mobileImage img {
-  width: 100%
-}
-
-.searchPage ul {
+.clearfix{
+  height: 40em;
   background: url("http://finda.photo/image/16506/thumbnail/original") fixed;
   background-repeat: round;
+}
+
+.RightDiv {
+  height: 40em;
+  background-color: white;
+  width: 5%;
+  float: left;
+}
+
+.ClearDiv {
+  background-color: transparent;
+  float: left;
+  width: 90%;
+  height: 30em;
+}
+
+.ClearDiv p {
+  color: white;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 82% 12%;
+  font-weight: 500;
+}
+
+.LeftDiv {
+  height: 40em;
+  float: left;
+  background-color: white;
+  width: 5%;
 }
 
 .searchPage ul {
   position: relative;
     margin-bottom: 0;
     z-index: 1;
-    margin-top: -152px;
+    margin-top: 0px;
     margin-left: 0;
     width: 100%;
-}
-
-.map_wrapper {
-  width: 100%;
-}
-
-.containerPark {
-  padding: 0;
-  margin: 0;
 }
 
 .list-group {
   text-align: center;
 }
 
-.list-group p {
-  margin-top: 10%;
-  color: white;
+.AboutParkie {
+  width: 80%;
+  text-align: justify;
+  margin-left: 10%;
+  color: #006738;
+  font-family: proxima-nova;
+  letter-spacing: .0192px;
+  margin-bottom: 5%;
 }
 
-// .collapsed {
-//   background-color: #333;
-//   color: white;
-//   padding: 20px;
-// }
+.AboutParkie h1 {
+  display: block;
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.AboutParkie p {
+  display: block;
+  font-family: proxima-nova;
+  margin-top: 5%;
+  letter-spacing: .03em;
+  line-height: 1.44em;
+  font-size: 14.5px;
+  font-weight: 300;
+}
 
 .park_li li {
-    background-color: black;
-    color: white;
-    padding: 20px;
+  // color: #006738;
+  // padding: 20px;
+  // border: 1px solid #006738;
+  // width: 75%;
+  // margin-left: 12.5%;
+  // list-style: none;
 }
 
-.ParkList {
-    // position: relative;
-    // display: block;
-    // padding: 10px 15px;
-    // background-color: #fff;
-    // border: 1px solid #ddd;
+.Or {
+  margin-top: 5%;
+}
+
+.ParkHeader {
+  color: #006738;
+  padding: 20px;
+  border: 1px solid #006738;
+  width: 75%;
+  margin-left: 12.5%;
+  list-style: none;
 }
 
 #parks_near_by li{
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  background-color: #fff;
-  color: black;
+  // position: relative;
+  // display: block;
+  // padding: 10px 15px;
+  // background-color: #fff;
+  // color: #006738;
 }
 
-#parks_near_by h3 {
+#parks_near_by li:visited {
+  color: #006738
+}
+
+#parks_near_by h2 {
   position: relative;
   display: block;
-  padding: 10px 15px;
-  background-color: #fff;
-  color: black;
-  font-size: 20px;
+  color: #006738;
   margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
 }
+
+#parks_near_by a:visited {
+  color: #006738
+}
+
+
 
 .activity_li li {
-  background-color: black;
-  color: white;
-  margin-top: 10%;
-  padding: 20px;
+  // color: #006738;
+  // padding: 20px;
+  // border: 1px solid #006738;
+  // width: 75%;
+  // margin-left: 12.5%;
+  // list-style: none;
 }
 
 .list-group-item a {
   position: relative;
   display: block;
   padding: 10px 15px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  color: #006738;
+}
+
+.ActivityHeader {
+  color: #006738;
+  padding: 20px;
+  border: 1px solid #006738;
+  width: 75%;
+  margin-left: 12.5%;
+  list-style: none;
+}
+
+.list-group-item a:visited {
+  color: #006738
+}
+
+.hidden-sm {
+  margin-bottom: 25px;
 }

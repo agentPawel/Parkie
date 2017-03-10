@@ -1,49 +1,50 @@
-
 <section class="searchPage">
-
   <div class="hidden-sm">
-    <div class="containerImage">
-      <div class="mobileImage">
-        <img src="http://finda.photo/image/16506/thumbnail/original">
+    <div class="clearfix">
+      <div class="RightDiv">
+      </div>
+      <div class="ClearDiv">
+        <p>
+          Welcome To Parkie!
+        </p>
+      </div>
+      <div class="LeftDiv">
       </div>
     </div>
-
     <ul class="list-group">
-
+      <div class="AboutParkie">
+        <h1>about.</h1>
+        <h1>–</h1>
+        <p>
+          Hey there! Parkie will help connect you to people at city parks
+          based on your activity of choice, or your preferred park.
+          You can create an event for a park's activity to let other subscribers
+          know when and where you will be in the park. It will help you create
+          impromptu meet ups with other parkies with similar agendas!
+        </p>
+      </div>
       <div class="park_li">
-        <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePark" aria-expanded="false" aria-controls="collapsePark">
-          Park
-        </li>
+        <div class="ParkHeader">
+          <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsePark" aria-expanded="false" aria-controls="collapsePark">
+            Park
+          </li>
+        </div>
         <div id="collapsePark" class="collapse" role="tabpanel" aria-labelledby="headingPark">
           <div class="ParkList">
-            <div id="map_wrapper">
-              <div id="map_canvas" class="mapping"></div>
-            </div>
             <div id="Park_Search">
               <div id="parks_near_by">
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
-      <!-- <div id="collapsePark" class="collapse" role="tabpanel" aria-labelledby="headingPark">
-        <div class="containerPark">
-
-        </div>
-      </div>
-      <div class="hidden-xs"> -->
-
-
-      <div class="hidden-sm">
-        <p><strong>OR</strong></p>
-      </div>
-
+      <p class="Or"><strong>OR</strong></p>
       <div class="activity_li">
-        <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseActivity" aria-expanded="false" aria-controls="collapseActivity">
-          Activity
-        </li>
+        <div class="ActivityHeader">
+          <li class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseActivity" aria-expanded="false" aria-controls="collapseActivity">
+            Activity
+          </li>
+        </div>
         <div id="collapseActivity" class="collapse" role="tabpanel" aria-labelledby="headingActivity">
           <div class="list-group-item list-group-item-action">
             <% @activities.each do |activity| %>
@@ -52,11 +53,8 @@
               <% end %>
               <% end %>
           </div>
-          <a href="#" class="list-group-item list-group-item-action">Activity #1</a>
-          <a href="#" class="list-group-item list-group-item-action">Activity #2</a>
-          <a href="#" class="list-group-item list-group-item-action">Activity #3</a>
-          <a href="#" class="list-group-item list-group-item-action">Activity #4</a>
         </div>
       </div>
     </ul>
+  </div>
 </section>

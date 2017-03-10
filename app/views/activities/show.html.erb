@@ -26,7 +26,7 @@
             <% else %>
               <% @park_activity_events.each do |event| %>
                 <div class="Container3">
-                  <h5><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> other Parkies!</h5>
+                  <h5><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> other parkies!</h5>
                   <h4><%=event.description=%></h4>
                   <% unless current_user == nil %>
                     <% if event.attendees.ids.include? current_user.id %>
