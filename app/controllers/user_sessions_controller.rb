@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
      @user = User.new
    end
 
-   def create
+  def create
     if @user = login(params[:email], params[:password])
       flash[:success] = "Login successful!"
       redirect_back_or_to user_path(@user)
@@ -14,8 +14,8 @@ class UserSessionsController < ApplicationController
     end
    end
 
-   def destroy
-     logout
-     redirect_back_or_to :back, notice: 'Logged out!'
-   end
+  def destroy
+    logout
+    redirect_to root_url, notice: 'Logged out!'
+  end
  end

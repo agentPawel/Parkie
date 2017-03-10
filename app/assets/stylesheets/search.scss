@@ -108,7 +108,18 @@ div#search-page-panel {
 }
 
 
-.img-circle {
+#icons .img-circle {
   -webkit-filter: invert(1);
   background-color: #f775ed;
+}
+
+.activity .img-circle {
+  -webkit-filter: invert(1);
+  background-color: #f775ed;
+}
+
+
+
+#icons {
+  text-align: center;
 }

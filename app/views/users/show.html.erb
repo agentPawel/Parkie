@@ -1,46 +1,50 @@
-<% if @user.avatar != ""%>
-    <div><%= image_tag @user.avatar,:class =>'img-circle' %></div>
-    <% else %>
-    <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
+<div class="show_page_content">
+  <% if @user.avatar != ""%>
+      <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br><%= link_to "Logout", :logout, method: :post %>
+      </div>
 
-<% end %>
+      <% else %>
+      <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
 
-<% if @user_subscriptions.count == 0 %>
+  <% end %>
 
-  <h1>Welcome to Parkie!<h1>
-  <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
-<% else %>
-  <h3>Here is a list of your subscriptions</h3>
-  <% @user_subscriptions.each do |subscription| %>
-    <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
-    <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
-      <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+  <% if @user_subscriptions.count == 0 %>
+
+    <h1>Welcome to Parkie <%=@user.first_name%>!<h1>
+    <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
+  <% else %>
+    <h3>Here is a list of your subscriptions</h3>
+    <% @user_subscriptions.each do |subscription| %>
+      <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
+      <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
+        <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<% if @owned_events.count != 0 %>
-  <h3>Here are your events</h3>
-  <% @owned_events.each do |event| %>
-    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
-      => Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!</p>
-    <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
-      <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+  <% if @owned_events.count != 0 %>
+    <h3>Here are your events</h3>
+    <% @owned_events.each do |event| %>
+      <p class="user_p"><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+        Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= event.count %> people attending!  <br><br>    <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+      </p>
+      <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id,event: event), method: 'delete') do %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<% if @user_events.count == 0 %>
-  <h3>You are not currently scheduled to attend any events...<h3>
-<% else %>
-  <h3>Here is a list of your events</h3>
-  <% @user_events.each do |event| %>
-    <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
-    => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
-    <%= form_tag(participant_path(event: event), method: 'delete') do %>
-      <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+  <% if @user_events.count == 0 %>
+    <h3>You are not currently scheduled to attend any events...<h3>
+  <% else %>
+    <h3>Here is a list of your events</h3>
+    <% @user_events.each do |event| %>
+      <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
+      => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
+      <%= form_tag(participant_path(event: event), method: 'delete') do %>
+        <button class="join_event_button" name="join_event_button" type="submit">Cancel your attendance!</button>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
+  <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
+</div>
