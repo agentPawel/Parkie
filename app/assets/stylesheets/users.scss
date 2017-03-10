@@ -3,6 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img.img-circle {
-    width: 15%;
+    width: 175px;
+    height: 175px;
     border: solid black 4px;
 };
+
+
+// #notice{
+//   font-family: 'Rancho';
+//   font-size: 20px;
+//   padding: 30px;
+//   background-color: white;
+//   color: white;
+// }
+//
+// #alert{
+//   font-family: 'Rancho';
+//   font-size: 20px;
+//   background-color: white;
+//   padding: 30px;
+// }
+
+.show_page_content {
+  margin-left: 50px;
+  padding: 100px 0 100px 0;
+}
+
+.profile_pic {
+  padding-top: 100px;
+}
+
+.user_p {
+    font-family: 'Rancho';
+    font-size: 35px;
+    font-weight: bold;
+    background-color: rgba(0, 128, 0, 0.12);
+    padding: 30px;
+}
