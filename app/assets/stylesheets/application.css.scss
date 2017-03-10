@@ -23,6 +23,7 @@
 
 body {
   font-family: 'Rancho', cursive;
+  padding-top: 100px;
 }
 
 
@@ -77,6 +78,7 @@ a:active {
   width: 100%;
   z-index: 100;
   position: absolute;
+  top: 0;
 }
 
 .nav_logo {
@@ -112,6 +114,7 @@ a:active {
   height: 50px;
   width: 100%;
   background-color: #006738;
+  bottom: 0;
 }
 
 .footer p {
