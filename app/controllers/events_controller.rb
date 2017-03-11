@@ -17,11 +17,7 @@ class EventsController < ApplicationController
     @event.owner = current_user
     @event.park_activity = park_activity
     @event.description = params[:event][:description]
-    if @event.count = params[:event][:count] == "" || nil
-      @event.count = 0
-    else
-      @event.count = params[:event][:count]
-    end
+    @event.count = params[:event][:count]
     @event.date_time = params[:event][:date_time]
 
     @event.date_time = DateTime.new(params[:event]["date_time(1i)"].to_i,

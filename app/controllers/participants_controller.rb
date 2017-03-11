@@ -5,7 +5,9 @@ class ParticipantsController < ApplicationController
     @participants.user_id = current_user.id
     @participants.event_id = params[:event]
     if @participants.save
-      Event.find(params[:event]).count += 1
+      event = Event.find(params[:event])
+      event.count += 1
+      event.save
       if current_user.cell != nil || current_user.cell == ""
         participant_event_join_message
       end
