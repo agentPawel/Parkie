@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *,
+ *::before,
+ *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+ }
+
+// DESKTOP
+
+ body {
+   font-family: 'Rancho', cursive;
+   // padding-top: 100px;
+ }
+
+ body {
+   margin: 0;
+   position: relative;
+ }
+
+ #notice {
+   margin: 0;
+ }
+
+ #alert {
+   margin: 0;
+ }
+
+ // unvisited link
+ a:link {
+    color: red;
+ }
+
+ /* visited link */
+ a:visited {
+    color: #006738;
+ }
+
+ /* mouse over link */
+ a:hover {
+   backcolor: hotpink;
+ }
+
+ /* selected link */
+ a:active {
+   color: blue;
+ }
+
+ /* Change the color of links on hover */
+ .nav_links a:hover {
+     background-color: #006738;
+     color: white;
+ }
+
+ /* Add a color to the active/current link */
+ .nav_links a.active {
+     background-color: #006738;
+     color: white;
+ }
+
+ // NAVIGATION BAR
+ .nav {
+   height: 80px;
+   width: 100%;
+   z-index: 100;
+   position: absolute;
+   top: 0;
+ }
+
+ .nav_logo {
+   margin: 10px;
+   width: 75px;
+   height: 75px;
+   padding-top: 5px;
+   float: left;
+   display: block;
+   background-color: white;
+   border-radius: 50%;
+ }
+
+ .nav_logo img {
+   height: 60px;
+   margin-left: -11px;
+ }
+
+ .nav_links {
+   padding: 25px;
+   height: 60px;
+   float: right;
+ }
+
+ .nav_links a {
+   padding: 25px 5px;
+   font-size: 26px;
+   color: white;
+ }
+
+ // FOOTER
+ .footer {
+   height: 50px;
+   width: 100%;
+   background-color: #006738;
+   bottom: 0;
+ }
+
+ .footer p {
+   padding-top: 15px;
+   color: white;
+   text-align: center;
+ }
+
+
+// MOBILE
+//
+// #myNavbar {
+//   margin-bottom: 0;
+// }
+//
+// .navbar-brand {
+//  padding: 0;
+// }
+//
+// .navbar-brand img {
+//  margin-top: -5%;
+// }
+//
+// .navbar-default {
+//   border-color: white;
+// }
+//
+// .navbar {
+//   border-color: white;
+// }
+//
+// .list-group-item {
+//   border: none;
+// }
+//
+// .navbar-inverse .navbar-brand {
+//   margin-left: 5%;
+// }
+//
+// .navbar-header div {
+//   width: 100%
+// }
+//
+// .navbar-header button {
+//  border-color: #006738;
+// }

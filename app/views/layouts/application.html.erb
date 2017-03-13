@@ -2,19 +2,46 @@
 <html>
   <head>
     <title>Parkie</title>
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
       <%= stylesheet_link_tag    "application" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
 
+<!-- DESKTOP -->
 
+  <!-- NAVIGATION -->
+  <div class="nav">
+    <div class="nav-container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="nav_logo">
+            <%=image_tag("Parkie.png")%>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="nav_links">
+            <% if current_user %>
+              <%= link_to "Logout", :logout, method: :post %>
+            <% else %>
+              <%= link_to "Register", new_user_path %> |
+              <%= link_to "Login", :login %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+
+<!-- MOBILE -->
+
+  <div class="hidden-sm">
     <nav id="myNavbar" class="navbar navbar-default navbar navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -24,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand"href="#"><%=image_tag("Parkie.png", height: '40px', width: '45%') %></a>
+                <a class="navbar-brand"href="http://localhost:3000/"><%=image_tag("Parkie.png", height: '40px', width: '45%') %></a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -36,8 +63,12 @@
             </div>
         </div>
     </nav>
+  </div>
 
   <%= yield %>
 
+  <div class='footer'>
+    <p>Parkie  &copy; 2017. Created by Frank Burke, Gee Mehra, Pawel Parafianowicz, and Valerie Boem</p>
+  </div>
   </body>
 </html>

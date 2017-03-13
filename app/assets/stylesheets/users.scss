@@ -2,12 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// DESKTOP
+
+img.img-circle {
+    width: 15%;
+    border: solid black 4px;
+};
+
+// MOBILE
+
 html {
   background-color: white;
-}
-
-* {
-  color: #006738;
 }
 
 .control_bar {
@@ -57,7 +62,3 @@ html {
 .signup a {
   color: #006738;
 }
-
-
-//////////////////////////////////////////////////
-// user form (sign up)

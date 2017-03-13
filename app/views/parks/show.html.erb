@@ -1,5 +1,7 @@
-<section class="ParksShow">
-  <div class="hidden-sm">
+<!-- Mobile -->
+
+<div class="hidden-sm">
+  <section class="ParksShow">
     <h1 class="Name"><%= @park.name %></h1>
     <h1>–</h1>
     <h3 class="Address"><%= @park.address %></h3>
@@ -11,5 +13,20 @@
       <%end%>
     </div>
     <h3 class="BackSearch"><%= link_to "Back To Search", :back %></h3>
-  </div>
-</section>
+  </section>
+</div>
+
+<!-- Desktop -->
+
+<img src="riverdale_park.jpg" height=400px width=auto>
+<div class="Park_page">
+  <h3><%= @park.name %><h3>
+  <p><%= @park.address %></p>
+
+  <ul class = "activity_list">
+  <% @park_activities.each do |activity| %>
+    <button class = "activity"><%= link_to activity.name, park_activity_path(params[:id], activity.id) %></li>
+  <%end%>
+  </ul>
+  <h3 class = "back_link"><%= link_to "Back To Search Results", :back %></h3>
+</div>

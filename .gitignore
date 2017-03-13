@@ -23,3 +23,6 @@
 
 # Ignore secrets
 config/secrets.yml
+
+#ignore photos
+public/uploads/

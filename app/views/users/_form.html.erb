@@ -1,5 +1,17 @@
-<section class="user_form"
+<section class="user_form"">
   <%= form_for @user do |f| %>
+  <br>
+  <% if @user.errors.any? %>
+       <div class="alert alert-danger">
+         <h4>Reservation not confirmed because:</h4>
+         <ul>
+           <% @user.errors.full_messages.each do |message| %><br>
+             <%= message %>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+
     <div class="field">
        <%= f.label :username %><br />
        <%= f.text_field :username %>
@@ -13,6 +25,11 @@
     <div class="field">
        <%= f.label :email %><br />
        <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+       <%= f.label :avatar %><br />
+       <%= f.file_field :avatar, title: "Please choose image" %>
     </div>
 
     <div class="field">

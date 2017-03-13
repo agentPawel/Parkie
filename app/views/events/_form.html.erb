@@ -1,21 +1,30 @@
-<section class="EventForm">
-  <%= form_for [@park, @activity, @event] do |f| %>
-    <div class="field">
-       <%= f.label :date_time %><br />
-       <%= f.datetime_select :date_time, ampm:true %>
-    </div>
+<%= form_for [@park, @activity, @event] do |f| %>
+<br>
+<% if @event.errors.any? %>
+     <div class="alert alert-danger">
+       <h4>Reservation not confirmed because:</h4>
+       <ul>
+         <% @event.errors.full_messages.each do |message| %><br>
+           <%= message %>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
+  <div class="field">
+     <%= f.label :date_time %><br />
+     <%= f.datetime_select :date_time, ampm:true %>
+  </div>
 
-    <div class="field">
-      <%= f.label :count %><br />
-      <%= f.number_field :count %>
-    </div>
+  <div class="field">
+    <%= f.label :count %><br />
+    <%= f.number_field :count %>
+  </div>
 
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-    </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
 
-    <%= f.submit %><br><br>
+  <%= f.submit %><br><br>
 
-  <% end %>
-</section>
+<% end %>
