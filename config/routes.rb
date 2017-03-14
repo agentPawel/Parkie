@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :participants
   resources :subscriptions, only: [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    resources :confirmations, only: [:new, :create]
+  end 
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :search, only: [:new, :create, :show]
 
