@@ -16,4 +16,24 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :username, presence: true
   validates :username, uniqueness: true
+
+# methods used for user phone verification
+  def self.generate
+  rand(100000..999999).to_s
+  end
+
+  def self.send_confirmation_to(user)
+  code = self.generate
+  user.update(verification: code)
+  Message.send_code(user, code)
+  end
+
+
+
+
+
+
+
+
+
 end
