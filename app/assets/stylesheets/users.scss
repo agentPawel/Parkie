@@ -2,19 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-img.img-circle {
-    width: 175px;
-    height: 175px;
-    border: solid black 4px;
-};
-
 .show_page_content {
-  margin-left: 50px;
-  padding: 100px 0 100px 0;
+  // margin-left: 50px;
+  // padding: 100px 0 100px 0;
 }
 
 .profile_pic {
   padding-top: 100px;
+  text-align: center;
+}
+
+img.img-circle {
+    width: 175px;
+    height: 175px;
+    // border: solid black 4px;
+};
+
+h1.welcome_user {
+  text-align: center;
 }
 
 .user_p {
