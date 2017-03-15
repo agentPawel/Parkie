@@ -1,16 +1,15 @@
 <div class="show_page_content">
   <% if @user.avatar != ""%>
-      <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br>
-      </div>
+    <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br>
+    </div>
+  <% else %>
+    <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
+  <% end %>
 
-     <% else %>
-      <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
+  <h1 class="welcome_user">Welcome to Parkie <%=@user.username%>!</h1></div>
 
- <% end %>
-
- <% if @user_subscriptions.count == 0 %>
-
-   <h1>Welcome to Parkie <%=@user.username%>!<h1>
+  <div class="user_subs_events">
+  <% if @user_subscriptions.count == 0 %>
     <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
   <% else %>
     <h3>Here is a list of your subscriptions</h3>
@@ -46,6 +45,7 @@
       <% end %>
     <% end %>
   <% end %>
+  </div>
 
   <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
 </div>
