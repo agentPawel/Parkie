@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'verifications/new'
 
-  get 'verifications/create'
 
   resources :messages do
     post 'send_message'
@@ -18,8 +16,8 @@ Rails.application.routes.draw do
   resources :participants
   resources :subscriptions, only: [:new, :create, :destroy]
   resources :users do
-    resources :confirmations, only: [:new, :create]
-  end 
+    resources :verifications, only: [:new, :create]
+  end
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :search, only: [:new, :create, :show]
 

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       User.send_confirmation_to(@user)
-      redirect_to new_user_confirmation_path(@user), notice: 'Please verify your phone number.'
+      redirect_to new_user_verification_path(@user), notice: 'Please verify your phone number.'
       # redirect_to user_path(:id)
     else
       render :new
