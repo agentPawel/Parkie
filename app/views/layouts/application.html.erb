@@ -22,8 +22,8 @@
           <div class="col-xs-6">
             <div class="nav_links">
               <% if current_user %>
-                <%= link_to "Logout", :logout, method: :post %>
                 <%= link_to "My Profile", user_path(current_user.id) %>
+                <%= link_to "Logout", :logout, method: :post %>
               <% else %>
                 <%= link_to "Register", new_user_path %> |
                 <%= link_to "Login", :login %>
@@ -45,8 +45,8 @@
           <div class="col-xs-6">
             <div class="nav_links_alt">
               <% if current_user %>
-                <%= link_to "Logout", :logout, method: :post %>
                 <%= link_to "My Profile", user_path(current_user.id) %>
+                <%= link_to "Logout", :logout, method: :post %>
               <% else %>
                 <%= link_to "Register", new_user_path %> |
                 <%= link_to "Login", :login %>
@@ -87,7 +87,7 @@
   <%= yield %>
 
   <div class='footer'>
-    <p>Parkie  &copy; 2017. Created by Frank Burke, Gee Mehra, Pawel Parafianowicz, and Valerie Boem</p>
+    <p>Copyright &copy; 2017 Parkie. Created by <span id="founders">Frank Burke</span>, <span id="founders">Gee Mehra</span>, <span id="founders">Pawel Parafianowicz</span>, and <span id="founders">Valerie Boem</span></p>
   </div>
   </body>
 </html>

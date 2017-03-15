@@ -6,7 +6,7 @@
 </div>
 
 <div class="welcome_text">
-  <h3>Welcome to PARKIE!</h3>
+  <h3>Welcome to <span id="parkie">Parkie</span>!</h3>
   <p>We are a community of park lovers!</p>
   <div class="row">
     <div class="col-sm-6">
@@ -101,6 +101,7 @@
         <a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2">Search by Activities</a>
       </h4>
     </div>
+      <div class="panel-body">
         <div class="Activity Search">
           <% @activities.each do |activity| %>
             <%= link_to park_list_path(activity.id), :action => 'go'  do %>

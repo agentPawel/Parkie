@@ -22,13 +22,39 @@
  }
 
 body {
-  font-family: 'Rancho', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   // padding-top: 100px;
-}
-
-body {
   margin: 0;
   position: relative;
+}
+
+p {
+  margin: 10px;
+  font-size: 12px;
+}
+
+h5 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+button {
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #63C6AE;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+#parkie {
+  font-family: rancho;
+  font-size: 75px;
+  color: #63C6AE;
 }
 
 #notice {
@@ -40,35 +66,37 @@ body {
 }
 
 // unvisited link
-a:link {
-   color: red;
-}
+// a:link {
+//    color: red;
+// }
 
 /* visited link */
-a:visited {
-   color: #006738;
-}
+// a:visited {
+  //  color: #006738;
+// }
 
 /* mouse over link */
 a:hover {
-  backcolor: hotpink;
+  backcolor: #777;
+  color: #63C6AE;
+  text-decoration: none;
 }
 
 /* selected link */
 a:active {
-  color: blue;
+  color: #63C6AE;
+  text-decoration: none;
 }
 
 /* Change the color of links on hover */
 .nav_links a:hover {
-    background-color: #006738;
-    color: white;
+    color: #63C6AE;
 }
 
 /* Add a color to the active/current link */
 .nav_links a.active {
-    background-color: #006738;
-    color: white;
+    background-color: #63C6AE;
+    color: fff;
 }
 
 // NAVIGATION BAR
@@ -100,43 +128,65 @@ a:active {
   padding: 25px;
   height: 60px;
   float: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .nav_links_alt {
   padding: 25px;
   height: 60px;
   float: right;
-  color: #006738;
-  font-size: 18px;
+  color: #888;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 
 .nav_links a {
   padding: 25px 5px;
-  font-size: 26px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav_links a:hover {
+  color: #63C6AE;
+}
+
+.bottom_nav {
+  background-color: #63C6AE;
+  text-align: center;
+  padding: 20px;
+}
+
+.bottom_nav a {
+  font-size: 18px;
+  font-weight: bold;
   color: white;
+  text-transform: uppercase;
+}
+
+.bottom_nav a:hover {
+  color: #888;
 }
 
 // FOOTER
 .footer {
   height: 50px;
   width: 100%;
-  background-color: #006738;
+  background-color: #262626;
   bottom: 0;
 }
 
 .footer p {
   padding-top: 15px;
-  color: white;
+  color: #888;
   text-align: center;
+  margin: 0;
 }
 
-
-button {
-    padding: 12px;
-    border-radius: 5px;
-    font-size: 24px;
-    background-color: #006738;
-    color: white;
-
+#founders {
+  color: #63C6AE;
 }
