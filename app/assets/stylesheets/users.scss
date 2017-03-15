@@ -30,9 +30,10 @@ h3.welcome_user {
 }
 
 .user_subs_events {
-  margin: 40px 0 0 0;
+  margin: 40px auto;
   // padding: 15px;
   display: flex;
+  width: 80%;
 }
 
 .subscription_list {
@@ -62,6 +63,11 @@ p.subscription_list {
   padding: 10px;
 }
 
+.owned_event_list p {
+  padding-top: 8px;
+  line-height: 0.1em;
+}
+
 button.create_event_button {
   margin-left: 10px;
 }
@@ -70,6 +76,11 @@ button.create_event_button {
   flex: 1;
   padding: 10px;
 
+}
+
+.joined_event_list p {
+  padding-top: 8px;
+  line-height: 0.1em;
 }
 
 // .user_p {

@@ -30,7 +30,7 @@ body {
 
 p {
   margin: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 h5 {
@@ -155,6 +155,23 @@ a:active {
   color: #63C6AE;
 }
 
+.bottom_nav {
+  background-color: #63C6AE;
+  text-align: center;
+  padding: 20px;
+}
+
+.bottom_nav a {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.bottom_nav a:hover {
+  color: #888;
+}
+
 // FOOTER
 .footer {
   height: 50px;
@@ -167,6 +184,7 @@ a:active {
   padding-top: 15px;
   color: #888;
   text-align: center;
+  margin: 0;
 }
 
 #founders {
