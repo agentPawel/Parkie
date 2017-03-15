@@ -22,8 +22,8 @@
           <div class="col-xs-6">
             <div class="nav_links">
               <% if current_user %>
-                <%= link_to "Logout", :logout, method: :post %>
                 <%= link_to "My Profile", user_path(current_user.id) %>
+                <%= link_to "Logout", :logout, method: :post %>
               <% else %>
                 <%= link_to "Register", new_user_path %> |
                 <%= link_to "Login", :login %>
@@ -45,8 +45,8 @@
           <div class="col-xs-6">
             <div class="nav_links_alt">
               <% if current_user %>
-                <%= link_to "Logout", :logout, method: :post %>
                 <%= link_to "My Profile", user_path(current_user.id) %>
+                <%= link_to "Logout", :logout, method: :post %>
               <% else %>
                 <%= link_to "Register", new_user_path %> |
                 <%= link_to "Login", :login %>
