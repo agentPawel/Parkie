@@ -54,7 +54,7 @@ button:hover {
 #parkie {
   font-family: rancho;
   font-size: 75px;
-  color: white;
+  color: #63C6AE;
 }
 
 #notice {
@@ -66,35 +66,37 @@ button:hover {
 }
 
 // unvisited link
-a:link {
-   color: red;
-}
+// a:link {
+//    color: red;
+// }
 
 /* visited link */
-a:visited {
-   color: #006738;
-}
+// a:visited {
+  //  color: #006738;
+// }
 
 /* mouse over link */
 a:hover {
-  backcolor: hotpink;
+  backcolor: #777;
+  color: #63C6AE;
+  text-decoration: none;
 }
 
 /* selected link */
 a:active {
-  color: blue;
+  color: #63C6AE;
+  text-decoration: none;
 }
 
 /* Change the color of links on hover */
 .nav_links a:hover {
-    background-color: #63C6AE;
-    color: white;
+    color: #63C6AE;
 }
 
 /* Add a color to the active/current link */
 .nav_links a.active {
     background-color: #63C6AE;
-    color: white;
+    color: fff;
 }
 
 // NAVIGATION BAR
@@ -126,21 +128,31 @@ a:active {
   padding: 25px;
   height: 60px;
   float: right;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .nav_links_alt {
   padding: 25px;
   height: 60px;
   float: right;
-  color: #63C6AE;
-  font-size: 18px;
+  color: #888;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 
 .nav_links a {
   padding: 25px 5px;
-  font-size: 26px;
+  font-size: 16px;
   color: #fff;
+  font-weight: bold;
+}
+
+.nav_links a:hover {
+  color: #63C6AE;
 }
 
 // FOOTER

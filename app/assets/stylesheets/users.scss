@@ -24,6 +24,9 @@ h3 {
 
 h3.welcome_user {
   text-align: center;
+  color: white;
+  background-color: #63C6AE;
+  padding: 25px;
 }
 
 .user_subs_events {
@@ -37,7 +40,7 @@ h3.welcome_user {
   text-align: center;
   flex: 1;
   flex-direction: row;
-  margin: 10px;
+  margin: 10px 10px 10px 40px;
   padding: 15px;
 }
 
