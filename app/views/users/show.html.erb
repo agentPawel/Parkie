@@ -6,23 +6,22 @@
     <div><%= image_tag "default.jpg",:class =>'img-circle' %></div>
   <% end %>
 
-  <h1 class="welcome_user">Welcome to Parkie <%=@user.username%>!</h1></div>
+  <h3 class="welcome_user">Welcome to Parkie <span style="color:#2d5faf"><%=@user.username%></span>!</h3></div>
 
-  <!-- <div class="user_subs_events"> -->
+  <div class="user_subs_events">
 
     <div class="subscription_list">
       <% if @user_subscriptions.count == 0 %>
-        <h3>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h3>
+        <h5>We are a community based around Parks, make sure to have a look around and subscribe to your favourite events!</h5>
       <% else %>
-        <div class="subscription_item">
-          <h3>Your subscriptions</h3></br>
+        <h5>Your subscriptions</h5>
+        <!-- <div class="subscription_item"> -->
           <% @user_subscriptions.each do |subscription| %>
               <p><%= subscription.activity.name %> @ <%= subscription.park.name %></p>
-        </div>
-          <div class="subscribe_button">
+          <!-- <div class="subscribe_button"> -->
             <%= form_tag(subscription_path(id: subscription.id), method: 'delete') do %>
               <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
-          </div>
+          <!-- </div> -->
           <% end %>
         <% end %>
       <% end %>
@@ -31,7 +30,7 @@
     <div class="event_list">
       <div class="owned_event_list">
         <% if @owned_events.count != 0 %>
-          <h3>Your events</h3>
+          <h5>Your events</h5>
           <% @owned_events.each do |event| %>
             <p class="user_p"><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
               Starting @ <%=event.date_time.strftime(" %I:%M%p") %> with <%= pluralize(event.count, "person" ) %> attending!  <br><br>
@@ -41,17 +40,17 @@
             <% end %>
           <% end %>
         <% else %>
-          <h3>Your events</h3>
+          <h5>Your events</h5>
           <p>You have not created any events</p>
         <% end %>
       </div>
 
       <div class="joined_event_list">
         <% if @user_events.count == 0 %>
-          <h3>Events you're attending</h3>
+          <h5>Events you're attending</h5>
           <p>You are not currently scheduled to attend any events...<p>
         <% else %>
-          <h3>Here is a list of your events</h3>
+          <h5>Here is a list of your events</h5>
           <% @user_events.each do |event| %>
             <p><%= event.park_activity.activity.name %> @ <%= event.park_activity.park.name %>
             => <%= event.owner.username %> will be there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people attending!</p>
@@ -62,7 +61,7 @@
         <% end %>
       </div>
     </div>
-  <!-- </div> -->
+  </div>
 
   <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %>
 </div>
