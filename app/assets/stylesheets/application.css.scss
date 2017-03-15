@@ -38,6 +38,19 @@ h5 {
   font-size: 18px;
 }
 
+button {
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #63C6AE;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #777;
+}
+
 #parkie {
   font-family: rancho;
   font-size: 75px;
@@ -74,13 +87,13 @@ a:active {
 
 /* Change the color of links on hover */
 .nav_links a:hover {
-    background-color: #006738;
+    background-color: #63C6AE;
     color: white;
 }
 
 /* Add a color to the active/current link */
 .nav_links a.active {
-    background-color: #006738;
+    background-color: #63C6AE;
     color: white;
 }
 
@@ -119,7 +132,7 @@ a:active {
   padding: 25px;
   height: 60px;
   float: right;
-  color: #006738;
+  color: #63C6AE;
   font-size: 18px;
 }
 
@@ -127,29 +140,23 @@ a:active {
 .nav_links a {
   padding: 25px 5px;
   font-size: 26px;
-  color: white;
+  color: #fff;
 }
 
 // FOOTER
 .footer {
   height: 50px;
   width: 100%;
-  background-color: #006738;
+  background-color: #262626;
   bottom: 0;
 }
 
 .footer p {
   padding-top: 15px;
-  color: white;
+  color: #888;
   text-align: center;
 }
 
-
-button {
-    padding: 3px;
-    // border-radius: 5px;
-    font-size: 12px;
-    background-color: #2d5faf;
-    color: white;
-
+#founders {
+  color: #63C6AE;
 }
