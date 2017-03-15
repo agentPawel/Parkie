@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'verifications/new'
+
+  get 'verifications/create'
+
   resources :messages do
     post 'send_message'
   end
