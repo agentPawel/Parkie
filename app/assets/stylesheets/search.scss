@@ -27,7 +27,7 @@ video#frisbee {
 
 .search_container {
   display: inline-block;
-  background-color: #55bb76;
+  background-color: #63C6AE;
   margin: auto;
   margin-top: 150px;
   // border-radius: 5px;
@@ -35,10 +35,15 @@ video#frisbee {
   height: 65px;
 }
 
+.search_container:hover {
+  background-color: #777;
+}
+
 .search_container p{
   padding: 8px 0 0 0;
   margin: 0;
   font-size: 10px;
+  color: white;
 }
 
 .search_container h2{
@@ -46,6 +51,7 @@ video#frisbee {
   margin: 0;
   font-size: 20px;
   text-emphasis: bold;
+  color: white;
 }
 
 .about_parkie {
