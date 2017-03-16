@@ -78,7 +78,7 @@ button:hover {
 /* mouse over link */
 a:hover {
   backcolor: #777;
-  color: #63C6AE;
+  // color: #63C6AE;
   text-decoration: none;
 }
 
@@ -90,13 +90,13 @@ a:active {
 
 /* Change the color of links on hover */
 .nav_links a:hover {
-    color: #63C6AE;
+    // color: #63C6AE;
 }
 
 /* Add a color to the active/current link */
 .nav_links a.active {
     background-color: #63C6AE;
-    color: fff;
+    color: #fff;
 }
 
 // NAVIGATION BAR
