@@ -2,7 +2,7 @@ class Message < ApplicationRecord
 
 
 
-TWILIO_CLIENT = Twilio::REST::Client.new(Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token)
+TWILIO_CLIENT = Twilio::REST::Client.new(ENV['twilio_account_sid'], ENV['twilio_auth_token'])
 APP_NUMBER = Rails.application.secrets.twilio_num
 
 
@@ -24,6 +24,8 @@ APP_NUMBER = Rails.application.secrets.twilio_num
     message
   end
 
+
+  # TWILIO_CLIENT.messages.create(from: "+1 647-931-1815", to: '4164283530', body: 'test')
 
   def self.send_code(user, verification)
     body = "Here is your verification code: " + verification
