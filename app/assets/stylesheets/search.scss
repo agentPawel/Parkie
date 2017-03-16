@@ -97,6 +97,7 @@
 .col-sm-6 h2 a {
   font-size: 20px;
   color: #63C6AE;
+  text-transform: uppercase;
 }
 
 .col-sm-6 h3 {
@@ -156,15 +157,7 @@
 }
 
 .icons .img-circle {
-  // -webkit-filter: invert(1);
-  // background-color: #f775ed;
   border: #63c6AE 2px solid;
-  padding: 5px;
-}
-
-.activity .img-circle {
-  // -webkit-filter: invert(1);
-  background-color: #f775ed;
 }
 
 .icons {
@@ -180,7 +173,9 @@
 }
 
 h3.activity_header {
-    margin-top: 13px;
+  margin-top: 13px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .icons:last-child {
