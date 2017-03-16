@@ -108,8 +108,8 @@
           <% @activities.each do |activity| %>
             <%= link_to park_list_path(activity.id), :action => 'go'  do %>
             <div class="col-sm-4">
-              <div class="icons"><h3 class="activity_header"><%= activity.name %></h3>
-                <%= image_tag activity.image,:class =>'img-circle' %>
+              <div class="icons"><div class="activity_header"><%= image_tag activity.image,:class =>'img-circle' %>
+                <h3><%= activity.name %></h3></div>
               </div>
             </div>
             <% end %>

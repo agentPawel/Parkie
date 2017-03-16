@@ -53,6 +53,10 @@ a {
   color: white;
 }
 
+.about_container {
+ width: 100%;
+}
+
 .about_parkie {
   height: 200px;
 }
@@ -75,13 +79,17 @@ a {
 }
 
 .about_description h3 {
-  font-size: 26px;
+  font-size: 18px;
   margin: 0;
+  text-transform: uppercase;
+  color: #63C6AE;
 }
 
 .about_description p {
-  margin: 0;
+  margin: 3px 0 0 0;
   text-align: center;
+  color: #777;
+  font-size: 14px;
 }
 
 .col-sm-6 {
@@ -135,10 +143,6 @@ a {
     height: auto;
 }
 
-.about_container {
- width: 100%;
-}
-
 #map_wrapper {
   clear: both;
 }
@@ -159,12 +163,17 @@ a {
   margin-top: 20px;
 }
 
+.activity_search h3 {
+  margin-top: 10px;
+}
+
 .activity_search {
   clear: both;
 }
 
 .icons .img-circle {
   border: #63c6AE 2px solid;
+  margin-top: 20px;
 }
 
 .icons {
