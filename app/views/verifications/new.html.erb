@@ -1,8 +1,12 @@
 <h1>
+  <br>
+  <br>
   <%= @user.cell %>
+  <% User.send_confirmation_to(@user) %>
 </h1>
-<p>We have sent you a SMS with a code to the number above.</p>
-<p>To complete your phone number verification, please enter the 6-digits activation code.</p>
+<p>We have sent you a SMS with a code to the number above.
+You won't recieve any texts from Parkie until you verify your phone number! </p>
+<p>To complete your phone number verification, please enter the 6-digit activation code.</p>
 <%= form_tag(user_verifications_path, method: "post", class: "form-horizontal")  do %>
   <div class="form-group">
     <%= label_tag :verification, "Verification code", class: "col-md-2 control-label" %>
@@ -16,4 +20,8 @@
       <%= submit_tag "Confirm", class: "btn btn-success" %>
     </div>
   </div>
+
+
+<%=link_to "Skip for now", user_path(current_user.id) %>
+
 <% end %>
