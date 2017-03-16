@@ -8,10 +8,10 @@ class ParticipantsController < ApplicationController
       event = Event.find(params[:event])
       event.count += 1
       event.save
-      if current_user.cell != nil || current_user.cell == ""
+      if current_user.verification == "verified"
         participant_event_join_message
       end
-      if Event.find(params[:event]).owner.cell != nil || Event.find(params[:event]).owner.cell == ""
+      if Event.find(params[:event]).owner.verification == "verified"
         owner_event_join_message
       end
       redirect_to user_path(current_user.id)
@@ -26,10 +26,10 @@ class ParticipantsController < ApplicationController
     @participant = Participant.find_by(user_id: user, event_id: event)
     if @participant.destroy
       Event.find(event).count -= 1
-      if current_user.cell != nil && current_user.cell != ""
+      if current_user.verification == "verified"
         participant_cancel_message
       end
-      if Event.find(params[:event]).owner.cell != nil && Event.find(params[:event]).owner.cell != ""
+      if Event.find(params[:event]).owner.cell != nil && Event.find(params[:event]).owner.verification == "verified"
         owner_participant_cancel_message
       end
       redirect_to user_path(current_user.id)

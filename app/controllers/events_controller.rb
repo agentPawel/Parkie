@@ -27,7 +27,7 @@ class EventsController < ApplicationController
                         params[:event]["date_time(5i)"].to_i)
 
     if @event.save
-      if current_user.cell != nil && current_user.cell != ""
+      if current_user.verification == "verified"
         event_create_message
       end
       subscriber_event_notification_message
@@ -70,7 +70,7 @@ class EventsController < ApplicationController
 
     subscribers = @event.park_activity.subscriptions
     subscribers.each do |subscription|
-      if User.find(subscription.user_id).cell != nil && User.find(subscription.user_id).cell != ""
+      if User.find(subscription.user_id).verification == "verified"
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
         body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
@@ -89,7 +89,7 @@ class EventsController < ApplicationController
     time = @event.date_time
 
     participants.each do |participant|
-      if User.find(participant.user_id).cell != nil && User.find(participant.user_id).cell != ""
+      if User.find(participant.user_id).verification == "verified"
         name = User.find(participant.user_id).username
         cell = User.find(participant.user_id).cell
         body = "Hey #{name}, #{e_owner} has just cancelled their #{activity} event at #{park} for #{time.strftime("%I:%M%p")} ! :("

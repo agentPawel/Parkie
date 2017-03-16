@@ -63,5 +63,7 @@
     </div>
   </div>
 
-  <div class="bottom_nav"><%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %></div>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'Search', root_url %> | <%= link_to 'Verify my #', new_user_verification_path(@user) if @user.verification != 'verified' %>
+
 </div>

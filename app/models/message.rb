@@ -25,6 +25,11 @@ APP_NUMBER = Rails.application.secrets.twilio_num
   end
 
 
+  def self.send_code(user, verification)
+    body = "Here is your verification code: " + verification
+    self.send_message(user.cell, body)
+  end
+
 
 
 end
