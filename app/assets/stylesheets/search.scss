@@ -80,6 +80,31 @@
   text-align: center;
 }
 
+.col-sm-6 {
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+.col-sm-6:hover {
+  background-color: #f1f1f1;
+}
+
+.col-sm-6 h2 {
+  margin-top: 3px;
+  line-height: 0.6em;
+}
+
+.col-sm-6 h2 a {
+  font-size: 20px;
+  color: #63C6AE;
+}
+
+.col-sm-6 h3 {
+  font-size: 16px;
+  color: #777;
+  margin: 2px;
+}
+
 .round-button {
     width: 10%;
     height: 0;
@@ -123,6 +148,7 @@
   color: white;
   background-color: #63C6AE;
   padding: 25px;
+  margin-top: 20px;
 }
 
 .activity_search {
