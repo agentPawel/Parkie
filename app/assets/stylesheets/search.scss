@@ -156,12 +156,14 @@
 }
 
 .icons .img-circle {
-  -webkit-filter: invert(1);
-  background-color: #f775ed;
+  // -webkit-filter: invert(1);
+  // background-color: #f775ed;
+  border: #63c6AE 2px solid;
+  padding: 5px;
 }
 
 .activity .img-circle {
-  -webkit-filter: invert(1);
+  // -webkit-filter: invert(1);
   background-color: #f775ed;
 }
 
