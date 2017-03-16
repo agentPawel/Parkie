@@ -21,11 +21,25 @@
   padding: 0;
  }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   // padding-top: 100px;
   margin: 0;
   position: relative;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.push {
+  height: 50px;
 }
 
 p {
@@ -78,7 +92,7 @@ button:hover {
 /* mouse over link */
 a:hover {
   backcolor: #777;
-  color: #63C6AE;
+  // color: #63C6AE;
   text-decoration: none;
 }
 
@@ -90,13 +104,13 @@ a:active {
 
 /* Change the color of links on hover */
 .nav_links a:hover {
-    color: #63C6AE;
+    // color: #63C6AE;
 }
 
 /* Add a color to the active/current link */
 .nav_links a.active {
     background-color: #63C6AE;
-    color: fff;
+    color: #fff;
 }
 
 // NAVIGATION BAR
@@ -159,6 +173,7 @@ a:active {
   background-color: #63C6AE;
   text-align: center;
   padding: 20px;
+
 }
 
 .bottom_nav a {
@@ -177,7 +192,6 @@ a:active {
   height: 50px;
   width: 100%;
   background-color: #262626;
-  bottom: 0;
   clear: both;
 }
 
