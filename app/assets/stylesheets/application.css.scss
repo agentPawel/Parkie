@@ -21,11 +21,25 @@
   padding: 0;
  }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   // padding-top: 100px;
   margin: 0;
   position: relative;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.push {
+  height: 50px;
 }
 
 p {
@@ -159,6 +173,7 @@ a:active {
   background-color: #63C6AE;
   text-align: center;
   padding: 20px;
+
 }
 
 .bottom_nav a {
@@ -177,7 +192,6 @@ a:active {
   height: 50px;
   width: 100%;
   background-color: #262626;
-  bottom: 0;
   clear: both;
 }
 
