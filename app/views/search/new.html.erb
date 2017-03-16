@@ -78,45 +78,47 @@
   </div>
 </div> -->
 
-<br>
-<br>
-
-<div class="panel-group" id = "search-page-panel">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
+<!-- <div class="panel-group" id = "search-page-panel"> -->
+  <!-- <div class="panel panel-default"> -->
+    <!-- <div class="panel-heading"> -->
+    <div class="park_search">
+      <!-- <h4 class="panel-title">
         <a id="park_search"></a><a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2">Search by Park </a>
-      </h4>
+      </h4> -->
+      <h4>Search by PARK</h4>
     </div>
+    <!-- </div> -->
 
       <div class="panel-body" id="parks_near_by"></div>
     </div>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
 
-<div class="panel-group" id = "search-page-panel">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2">Search by Activities</a>
-      </h4>
-    </div>
-      <div class="panel-body">
-        <a id="activities_search"></a><div class="Activity Search">
+<!-- <div class="panel-group" id = "search-page-panel"> -->
+  <!-- <div class="panel panel-default"> -->
+    <!-- <div class="panel-heading"> -->
+      <!-- <h4 class="panel-title"> -->
+        <!-- <a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2"></a> -->
+
+    <!-- </div> -->
+      <!-- <div class="panel-body"> -->
+        <!-- <a id="activities_search"></a> -->
+        <div class="activity_search">
+          <h4>Search by ACTIVITIES</h4>
           <% @activities.each do |activity| %>
             <%= link_to park_list_path(activity.id), :action => 'go'  do %>
             <div class="col-md-4">
-              <div id="icons"><h3 class="activity_header"><%= activity.name %></h3>
-              <%= image_tag activity.image,:class =>'img-circle' %>
-            </div>
+              <div class="icons"><h3 class="activity_header"><%= activity.name %></h3>
+                <%= image_tag activity.image,:class =>'img-circle' %>
+              </div>
             </div>
             <% end %>
           <% end %>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->
 
 <!--
 <div class="container">

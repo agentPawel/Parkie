@@ -1,11 +1,6 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-video#frisbee {
-  // position: absolute;
-  // z-index: 200;
-}
-
 .welcome_text {
   position: absolute;
   margin-top: -470px;
@@ -111,16 +106,26 @@ video#frisbee {
  width: 100%;
 }
 
-div#search-page-panel {
-    margin-bottom: 0px;
-  }
-
-#search-page-panel-text {
-  color: green;
+#map_wrapper {
+  clear: both;
 }
 
+.park_search h4 {
+  margin-top: 0;
+  text-align: center;
+  color: white;
+  background-color: #63C6AE;
+  padding: 25px;
+}
 
-#icons .img-circle {
+.activity_search h4 {
+  text-align: center;
+  color: white;
+  background-color: #63C6AE;
+  padding: 25px;
+}
+
+.icons .img-circle {
   -webkit-filter: invert(1);
   background-color: #f775ed;
 }
@@ -130,7 +135,7 @@ div#search-page-panel {
   background-color: #f775ed;
 }
 
-#icons {
+.icons {
   text-align: center;
 }
 
@@ -140,9 +145,4 @@ div#search-page-panel {
 
 .col-md-4 {
     background-color: white;
-}
-
-h4.panel-title {
-    text-align: center;
-    font-size: 39px;
 }
