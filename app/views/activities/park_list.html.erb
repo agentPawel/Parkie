@@ -1,12 +1,10 @@
 <div class="page-content">
-  <div class="Park_List">
-    <% @park_list.each do |park| %>
-      <%= link_to park_activity_path(park.id, @activity.id), :action => 'go'  do %>
-        <div class="Container">
-          <h3><%= park.name %><h3>
-          <p><%= park.address %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+
+
+<div class="activity_near_by">
+  <div class="activities_park_list">
+    <div id="map_wrapper">
+      <div id="map_canvas" class="mapping"></div>
+    </div>
+  </div>  
 </div>

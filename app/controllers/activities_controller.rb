@@ -20,6 +20,19 @@ class ActivitiesController < ApplicationController
     @park_list = @activity.parks
   end
 
+  #add a format json, which returns a json list of parks.
+  def activity_near_by
+    @activity = Activity.find(params[:id])
+    gps = params[:latitude]+','+ params[:longitude]
+    @activity.parks.near(gps, 3.9).size
+    respond_to do |format|
+      format.json do
+        render :json => @activity.parks.near(gps, 3.9).reverse
+      end
+    end
+  end
+
+
   def new
     @activity = Activity.new
   end

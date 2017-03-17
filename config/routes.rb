@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   post 'parks_near_by' => 'search#parks_near_by'
+  post 'activity_near_by/:id' => 'activities#activity_near_by'
+
 end

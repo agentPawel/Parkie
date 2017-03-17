@@ -1,6 +1,6 @@
 
 $(function(){
-  if ($('#map_canvas').length > 0){
+  if ($('.parks_map_wrapper').length > 0){
     navigator.geolocation.getCurrentPosition(function(location) {
     console.log(location.coords.latitude);
     console.log(location.coords.longitude);
