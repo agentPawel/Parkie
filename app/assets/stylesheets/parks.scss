@@ -8,7 +8,7 @@ font-size: 44px;
 }
 
 button.activity {
-  background-color: #088a12;
+  background-color: #65c4ad;
   color: white;
   cursor: pointer;
   padding: 10px;
@@ -18,20 +18,21 @@ button.activity {
   outline: none;
   transition: 0.4s;
   font-size: 24px;
+  border: solid;
 }
 
 button.activity a {
-    font-family: "Rancho";
+    font-family: helvetica;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 23px;
 
 }
 
 
 .activity .img-circle {
-  -webkit-filter: invert(1);
-  background-color: #f775ed;
+  background-color: white;
   margin: 15px;
   height: 90px;
   width: 90px;
