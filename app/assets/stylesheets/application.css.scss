@@ -79,16 +79,6 @@ button:hover {
   margin: 0;
 }
 
-// unvisited link
-// a:link {
-//    color: red;
-// }
-
-/* visited link */
-// a:visited {
-  //  color: #006738;
-// }
-
 /* mouse over link */
 a:hover {
   backcolor: #777;
@@ -157,6 +147,14 @@ a:active {
   text-transform: uppercase;
 }
 
+.nav_links_alt a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav_links_alt a:hover {
+  color: #63C6AE;
+}
 
 .nav_links a {
   padding: 25px 5px;
@@ -204,4 +202,5 @@ a:active {
 
 #founders {
   color: #63C6AE;
+  font-size: 12px;
 }

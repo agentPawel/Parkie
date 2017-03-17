@@ -1,6 +1,42 @@
 // Place all the styles related to the UserSessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.page-content {
-  padding: 100px 0 0 50px;
+page-content {
+  text-align: center;
+}
+
+.sign_up {
+  margin: 50px 40%;
+  // text-align: center;
+}
+
+.sign_up h1 {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.sign_up label {
+  color: #777;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #63C6AE;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #777;
+}
+
+button.join_event_button {
+  margin-top: 50px;
+}
+
+button.join_event_button a {
+  font-size: 12px;
 }
