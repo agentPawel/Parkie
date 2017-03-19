@@ -28,5 +28,6 @@ Rails.application.routes.draw do
 
   post 'parks_near_by' => 'search#parks_near_by'
   post 'activity_near_by/:id' => 'activities#activity_near_by'
+  post 'all_parks' => 'parks#all_parks'
 
 end

@@ -7,4 +7,15 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
     @park_activities = @park.activities
   end
+
+  def all_parks
+    @parks = Park.all
+    gps = params[:latitude]+','+ params[:longitude]
+    @parks.near(gps, 15.9).size
+    respond_to do |format|
+      format.json do
+        render :json => @parks.near(gps, 15.9).reverse
+      end
+    end
+  end
 end

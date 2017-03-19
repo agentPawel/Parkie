@@ -109,7 +109,7 @@
           <h4>Search by ACTIVITIES</h4>
           <% @activities.each do |activity| %>
             <%= link_to park_list_path(activity.id), :action => 'go'  do %>
-            <div class="col-sm-4">
+            <div class="col-md-3">
               <div class="icons"><div class="activity_header"><%= image_tag activity.image,:class =>'img-circle' %>
                 <h3><%= activity.name %></h3></div>
               </div>
