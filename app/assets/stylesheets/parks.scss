@@ -40,7 +40,11 @@ button.activity a {
 
 }
 
-.activity_show_img img{
+.activity_list_img img{
   border: solid 2px #63c6ae;
 border-radius: 50%;
+}
+
+div.activity_list_img {
+  text-align: center;
 }
