@@ -1,13 +1,21 @@
 <%=image_tag(@park.image, height: '500px', width: '100%') %>
 <div class="Park_page">
-  <h3><%= @park.name %><h3>
-  <p><%= @park.address %></p>
+  <div class="park_page_header">
+    <h3><%= @park.name %></h3>
+    <p><%= @park.address %></p>
+  </div>
 
   <ul class = "activity_list">
   <% @park_activities.each do |activity| %>
-    <button class = "activity"><%= link_to activity.name, park_activity_path(params[:id], activity.id) %></li>
-    <%= image_tag activity.image,:class =>'img-circle' %>
+    <button class = "activity">
+      <%= image_tag activity.image,:class =>'img-circle' %>
+      <%= link_to activity.name, park_activity_path(params[:id], activity.id) %></li>
+    </button>
   <%end%>
   </ul>
-  <h3 class = "back_link"><%= link_to "Back To Search Results", :back %></h3>
+
+  <div class="bottom_nav">
+    <%= link_to "Back To Search Results", :back %>
+  </div>
+
 </div>
