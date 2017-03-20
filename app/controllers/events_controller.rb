@@ -69,7 +69,7 @@ class EventsController < ApplicationController
     time = @event.date_time
 
     subscribers = @event.park_activity.subscriptions
-    # subscribers.each do |subscription|
+    subscribers.each do |subscription|
       if User.find(subscription.user_id).verification == "verified"
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
