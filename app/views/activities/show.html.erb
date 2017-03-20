@@ -1,23 +1,29 @@
 <div class="activity_show_img"><%=image_tag(@park_activity.image, height: '500px', width: '100%') %></div>
 
-<h1><%=@activity.name %> at <%= @park.name %>! </h1>
+<h3 class="activity_header"><%=@activity.name %> at <%= @park.name %>!</h3>
 
-<% if @subscription == nil %>
-  <%= form_tag(subscriptions_path, method: 'post') do %>
-    <%= hidden_field_tag(:park_activity_id, @park_activity.id) %>
-    <button class="subcribe_button" name="subscribe_button" type="submit">Subscribe!</button>
-  <% end %>
-<% else %>
-    <%= form_tag(subscription_path(id: @subscription.id), method: 'delete') do %>
-      <button class="subcribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+<div class="subscription">
+  <div class="subscription_container">
+    <% if @subscription == nil %>
+      <%= form_tag(subscriptions_path, method: 'post') do %>
+        <%= hidden_field_tag(:park_activity_id, @park_activity.id) %>
+        <h3>Subscribe to be notified of any upcoming events! </h3>
+        <button class="subscribe_button" name="subscribe_button" type="submit">Subscribe!</button>
+      <% end %>
+    <% else %>
+        <%= form_tag(subscription_path(id: @subscription.id), method: 'delete') do %>
+          <h3>Subscribe to be notified of any upcoming events! </h3>
+          <button class="subscribe_button" name="subscribe_button" type="submit">Unsubscribe</button>
+        <% end %>
     <% end %>
-<% end %>
+  </div>
+</div>
 
 <div class="event_list">
   <div class="Container">
 
     <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
-
+    
     <div class="Events!">
 
       <% if @park_activity_events == nil %>
@@ -42,6 +48,7 @@
         <% end %>
       <%end%>
     </div>
+
   </div>
 </div>
 

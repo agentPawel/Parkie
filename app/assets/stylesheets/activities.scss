@@ -5,6 +5,38 @@
   padding: 100px 0 0 0;
 }
 
+h3.activity_header {
+  background-color: #63c6ae;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.subscription {
+  margin: 20px 100px;
+  text-align: center;
+}
+.subscription_container {
+  padding: 10px;
+  background-color: #f1f1f1;
+  overflow: auto;
+  display: inline-block;
+}
+
+.subscription h3 {
+  margin: 0 20px;
+  margin-top: 4px;
+  font-size: 18px;
+  line-height: 18px;
+  color: #777;
+  float: left;
+}
+
+button.subscribe_button {
+  margin: 0 20px;
+  float: right;
+}
+
 button a {
   color: white;
 }
