@@ -66,7 +66,7 @@
 
 
 <div class="park_search">
-  <h4>Search by PARK</h4>
+  <h4> <a id="park_search"></a>Search by PARK</h4>
   <div class="all_parks"><%= link_to 'See All Parks', parks_path %></div>
 </div>
 
@@ -75,7 +75,7 @@
 </div>
 
 <div class="activity_search">
-  <h4>Search by ACTIVITIES</h4>
+  <h4><a id="activities_search"></a>Search by ACTIVITIES</h4>
   <% @activities.each do |activity| %>
     <%= link_to park_list_path(activity.id), :action => 'go'  do %>
     <div class="col-sm-3">
