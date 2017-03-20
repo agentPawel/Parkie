@@ -1,7 +1,6 @@
 <div class="show_page_content">
   <% if @user.avatar != ""%>
     <div class="profile_pic"><%= image_tag @user.avatar,:class =>'img-circle' %> <br><br>
-      <button class="edit_profile">Edit Profile</button>
 
     </div>
   <% else %>
@@ -115,6 +114,6 @@
 
   <% end %>
 
-  <div class="bottom_nav"><div class="edit_link"><%= link_to 'Edit', edit_user_path(@user) %></div> | <%= link_to 'Search', root_url %> | <%= link_to 'Verify my #', new_user_verification_path(@user) if @user.verification != 'verified' %>
+  <div class="bottom_nav"><a class="edit_profile">Edit</a> | <%= link_to 'Search', root_url %> | <%= link_to 'Verify my #', new_user_verification_path(@user) if @user.verification != 'verified' %>
   </div>
 </div>
