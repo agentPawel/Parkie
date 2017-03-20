@@ -1,4 +1,3 @@
-
 <div id="search_new_video">
   <video id="frisbee" width=100% autoplay loop muted>
     <source src="frisbee.mov" type="video/mp4">
@@ -26,120 +25,66 @@
 
 <div class="about_parkie">
   <div class="about_container">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="about_icons">
-        <img src="success.png" width=100px height=100px>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="about_icons">
+          <img src="success.png" width=100px height=100px>
+        </div>
+        <div class="about_description">
+          <h3>Subscribe</h3>
+          <p>Subscribe to your favorite activities!</p>
+        </div>
       </div>
-      <div class="about_description">
-        <h3>Subscribe</h3>
-        <p>Subscribe to your favorite activities!</p>
+      <div class="col-xs-4">
+        <div class="about_icons">
+          <img src="calendar.png" width=100px height=100px>
+        </div>
+        <div class="about_description">
+          <h3>Join or Create Events</h3>
+          <p>Join others.....</p>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="about_icons">
-        <img src="calendar.png" width=100px height=100px>
-      </div>
-      <div class="about_description">
-        <h3>Join or Create Events</h3>
-        <p>Join others.....</p>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div class="about_icons">
-        <img src="smartphone (1).png" width=100px height=100px>
-      </div>
-      <div class="about_description">
-        <h3>Notify everyone!</h3>
-        <p>We'll notify everyone for you!</p>
+      <div class="col-xs-4">
+        <div class="about_icons">
+          <img src="smartphone (1).png" width=100px height=100px>
+        </div>
+        <div class="about_description">
+          <h3>Notify everyone!</h3>
+          <p>We'll notify everyone for you!</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-  <div class="parks_map_wrapper">
 
-  </div>
+<div class="parks_map_wrapper">
+</div>
+
 <div id="map_wrapper">
     <div id="map_canvas" class="mapping"></div>
 </div>
 
-<!-- <div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion">
-        Search by Parks</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <span id="parks_near_by"></span>
-    </div>
-    </div>
-  </div>
-</div> -->
 
-<!-- <div class="panel-group" id = "search-page-panel"> -->
-  <!-- <div class="panel panel-default"> -->
-    <!-- <div class="panel-heading"> -->
-    <div class="park_search">
-      <!-- <h4 class="panel-title">
-        <a id="park_search"></a><a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2">Search by Park </a>
-      </h4> -->
-      <h4>Search by PARK</h4>
-      <div class="all_parks"><%= link_to 'See All Parks', parks_path %></div><br>
+<div class="park_search">
+  <h4>Search by PARK</h4>
+  <div class="all_parks"><%= link_to 'See All Parks', parks_path %></div>
+</div>
 
-    </div>
-    <!-- </div> -->
+<!-- Parks list is appended to this div from javascript file -->
+<div id="parks_near_by">
+</div>
 
-      <div id="parks_near_by">
-      </div>
-
-  <!-- </div> -->
-<!-- </div> -->
-
-<!-- <div class="panel-group" id = "search-page-panel"> -->
-  <!-- <div class="panel panel-default"> -->
-    <!-- <div class="panel-heading"> -->
-      <!-- <h4 class="panel-title"> -->
-        <!-- <a data-toggle="collapse" id= "search-page-panel-text" href="#collapse2"></a> -->
-
-    <!-- </div> -->
-      <!-- <div class="panel-body"> -->
-        <!-- <a id="activities_search"></a> -->
-        <div class="activity_search">
-          <h4>Search by ACTIVITIES</h4>
-          <% @activities.each do |activity| %>
-            <%= link_to park_list_path(activity.id), :action => 'go'  do %>
-            <div class="col-md-3">
-              <div class="icons"><div class="activity_header"><%= image_tag activity.image,:class =>'img-circle' %>
-                <h3><%= activity.name %></h3></div>
-              </div>
-            </div>
-            <% end %>
-          <% end %>
-        </div>
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </div> -->
-
-<!--
-<div class="container">
-  <div class="Park_Search">
-    <h1>Search by Parks</h1>
-    <div id="parks_near_by">
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class="Activity Search">
-  <h1>Search by Activities</h1>
+<div class="activity_search">
+  <h4>Search by ACTIVITIES</h4>
   <% @activities.each do |activity| %>
     <%= link_to park_list_path(activity.id), :action => 'go'  do %>
-      <h3><%= activity.name %></h3>
+    <div class="col-sm-3">
+      <div class="icons">
+        <div class="activity_header"><%= image_tag activity.image,:class =>'img-circle' %>
+          <h3><%= activity.name %></h3>
+        </div>
+      </div>
+    </div>
     <% end %>
   <% end %>
-
-</div> -->
+</div>

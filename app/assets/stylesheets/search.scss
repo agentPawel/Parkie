@@ -163,7 +163,7 @@ a {
   margin-top: 20px;
 }
 
-.activity_search h3 {
+.col-sm-3 h3 {
   margin-top: 10px;
 }
 
@@ -188,7 +188,11 @@ a {
   background-color: #f1f1f1;
 }
 
-h3.activity_header {
+.activity_header {
+  padding-top: 7px;
+}
+
+.activity_header h3 {
   margin-top: 13px;
   font-size: 20px;
   text-transform: uppercase;
