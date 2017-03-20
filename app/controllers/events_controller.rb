@@ -65,7 +65,9 @@ class EventsController < ApplicationController
   def subscriber_event_notification_message
     e_owner = @event.owner.username
     park = @event.park_activity.park.name
+    parkid = @event.park_activity.park.id
     activity = @event.park_activity.activity.name
+    activityid = @event.park_activity.activity.id
     time = @event.date_time
 
     subscribers = @event.park_activity.subscriptions
@@ -73,7 +75,7 @@ class EventsController < ApplicationController
       if User.find(subscription.user_id).verification == "verified"
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
-        body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} ! Go to https://guarded-badlands-14321.herokuapp.com/parks/#{park.id}/activities/#{activities.id} to join!"
+        body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} ! Go to https://guarded-badlands-14321.herokuapp.com/parks/#{parkid}/activities/#{activityid} to join!"
         Message.send_message(cell, body)
         unless @event.owner.cell == User.find(subscription.user_id).cell
         end
