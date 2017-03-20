@@ -69,11 +69,11 @@ class EventsController < ApplicationController
     time = @event.date_time
 
     subscribers = @event.park_activity.subscriptions
-    subscribers.each do |subscription|
+    # subscribers.each do |subscription|
       if User.find(subscription.user_id).verification == "verified"
         name = User.find(subscription.user_id).username
         cell = User.find(subscription.user_id).cell
-        body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} !"
+        body = "Hey #{name}, #{e_owner} has just created a #{activity} event at #{park} for #{time.strftime("%I:%M%p")} ! "
         Message.send_message(cell, body)
         unless @event.owner.cell == User.find(subscription.user_id).cell
         end
