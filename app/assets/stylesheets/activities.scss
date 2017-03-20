@@ -37,8 +37,42 @@ button.subscribe_button {
   float: right;
 }
 
+.events {
+  width: 80%;
+  text-align: center;
+  display: flex;
+  margin: 20px auto;
+}
+
+.create_event {
+  flex: 1;
+}
+
+.events_list {
+  flex: 1;
+}
+
+.events h2 {
+  font-size: 20px;
+  color: #63c6ae;
+  margin: 10px 0 15px 0;
+}
+
+.event_container {
+  width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+button.attend_event_button {
+  margin-top: 10px;
+}
+
 button a {
   color: white;
+  font-size: 12px;
 }
 
 button a:hover {
@@ -48,4 +82,8 @@ button a:hover {
 .activity_show_img {
     text-align: center;
     margin-top: 0px;
+}
+
+button.create_event_button {
+  margin: 15px;
 }
