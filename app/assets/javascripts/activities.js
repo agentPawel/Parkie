@@ -1,6 +1,5 @@
 $(function(){
-  if ($('.activity_near_by').length > 0){
-    console.log('hi');
+  if ($('#map_canvas').length > 0 && ('activity_near_by').length > 0){
     navigator.geolocation.getCurrentPosition(function(location) {
     console.log(location.coords.latitude);
     console.log(location.coords.longitude);
