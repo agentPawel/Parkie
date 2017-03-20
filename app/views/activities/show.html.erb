@@ -27,23 +27,29 @@
   </div>
 
   <div class="events_list">
-  <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> </h2>
-    <% if @park_activity_events == nil %>
-      <h3>There are no scheduled events at this time.</h3>
+  <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> to <%=1.week.from_now.strftime("%B %d, %Y")%>  </h2>
+    <% if @upcoming_events == [] %>
+      <h3>There are no scheduled events at this week.</h3>
     <% else %>
-      <% @park_activity_events.each do |event| %>
+      <% @upcoming_events.each do |event| %>
         <div class="event_container">
-          <h3><%= event.owner.username %> is there @ <%=event.date_time.strftime(" %I:%M%p")%> with <%=event.count%> people!<h3>
+
+          <h3><%= event.owner.username %> will be there @ <%=event.date_time.strftime("%B, %d, %I:%M%p")%> with <%=event.count%> people!<h3>
 
           <% unless current_user == nil %>
             <% if event.attendees.ids.include? current_user.id %>
               <%= form_tag(participant_path(event: event), method: 'delete') do %>
                 <button class="attend_event_button" name="attend_event_button" type="submit">Cancel your attendance!</button>
               <% end %>
+            <% elsif current_user.id == event.owner.id %>
+              <%= form_tag(park_activity_event_path(park_id: event.park.id, activity_id: event.activity.id, event: event), method: 'delete') do %>
+              <button class="create_event_button" name="create_event_button" type="submit">Cancel this Event!</button>
+              <% end %>
             <% else %>
               <%= form_tag(participants_path, method: 'post') %>
               <%= hidden_field_tag(:event, event.id) %>
               <button class="attend_event_button" name="attend_event_button" type="submit">Attend this event!</button>
+
             <% end %>
           <% end %>
         </div>

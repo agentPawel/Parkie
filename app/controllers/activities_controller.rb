@@ -9,6 +9,7 @@ class ActivitiesController < ApplicationController
     @park_activity = ParkActivity.find_by(park_id: params[:park_id], activity_id: params[:id])
 
     @park_activity_events = Event.where(park_activity_id: @park_activity)
+    @upcoming_events = Event.where("park_activity_id = ? AND date_time BETWEEN ? AND ?", @park_activity, Date.today, 1.week.from_now)
 
     unless current_user == nil
       @subscription = Subscription.find_by(park_activity_id: @park_activity.id, user_id: current_user.id)
