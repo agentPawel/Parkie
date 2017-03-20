@@ -85,10 +85,16 @@ button.create_event_button {
   line-height: 0.1em;
 }
 
-.edit_form {
+.edit_user_form {
   font-size: 17px;
   display: none;
   margin-left: 5px;
+}
+
+.edit_user_form input {
+  padding: 2px;
+  font-size: 17px;
+  margin-bottom: 8px;
 }
 
 .edit_form input {
