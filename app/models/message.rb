@@ -7,6 +7,15 @@ APP_NUMBER = Rails.application.secrets.twilio_num
 
 
 
+  def self.receive_message(params)
+  message = Message.create({
+  body: params[:Body],
+  to_num: params[:To],
+  from_num: params[:From]
+  })
+
+  end
+
 
 
   def self.send_message(to, body, *subscription_id)

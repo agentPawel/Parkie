@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     post 'send_message'
   end
 
+  post '/sms' => 'messages#receive'
+
   root 'search#new'
 
   resources :parks do
