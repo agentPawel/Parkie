@@ -1,6 +1,46 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.page-content {
+.page-content-events-new {
   padding: 100px 0 0 0;
+  text-align: center;
+}
+
+.page-content-events-new h1 {
+  text-align: center;
+  color: white;
+  background-color: #63C6AE;
+  padding: 25px;
+}
+
+.page-content-events-new a {
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+  margin-top: 10px;
+  background-color: #63C6AE;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.page-content-events-new a:hover {
+  background-color: #777;
+}
+
+label {
+  color: #777;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #777;
 }
