@@ -20,14 +20,14 @@
 </div>
 
 <div class="events">
-  <!-- <div class="Container"> -->
   <div class="create_event">
-    <h3>Create your own event, and we'll notify everyone for you!</h3>
+    <img src="/assets/smartphone.png" width=80px height=80px>
+    <h3>Create your own event, </br> and we'll notify everyone for you!</h3>
     <button class="create_event_button"><%= link_to "Create Event!", new_park_activity_event_path(params[:park_id], @activity.id) %></button>
   </div>
 
   <div class="events_list">
-  <h2>Events for <%=Time.now.strftime("%B %d, %Y")%> to <%=1.week.from_now.strftime("%B %d, %Y")%>  </h2>
+  <h2>Events from today until <%=1.week.from_now.strftime("%B %d, %Y")%>  </h2>
     <% if @upcoming_events == [] %>
       <h3>There are no scheduled events at this week.</h3>
     <% else %>
@@ -57,5 +57,4 @@
     <%end%>
   </div>
 
-  <!-- </div> -->
 </div>

@@ -41,13 +41,19 @@ button.subscribe_button {
   width: 80%;
   text-align: center;
   display: flex;
-  margin: 20px auto;
+  margin-bottom: 30px;
 }
 
 .create_event {
-  text-align: justify;
+  // text-align: justify;
   flex: 1;
   flex-basis: auto;
+}
+
+.create_event h3 {
+  color: #777;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .events_list {
@@ -58,6 +64,11 @@ button.subscribe_button {
   font-size: 20px;
   color: #63c6ae;
   margin: 10px 0 15px 0;
+}
+
+.events_list h3 {
+  font-size: 12px;
+  color: #777;
 }
 
 .event_container {
