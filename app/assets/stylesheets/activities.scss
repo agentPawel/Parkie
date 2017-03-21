@@ -45,7 +45,9 @@ button.subscribe_button {
 }
 
 .create_event {
+  text-align: justify;
   flex: 1;
+  flex-basis: auto;
 }
 
 .events_list {
@@ -59,7 +61,7 @@ button.subscribe_button {
 }
 
 .event_container {
-  width: 300px;
+  width: 400px;
   padding: 10px;
   margin: 10px auto;
   text-align: center;
