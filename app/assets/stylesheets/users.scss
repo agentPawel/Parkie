@@ -85,21 +85,31 @@ button.create_event_button {
   line-height: 0.1em;
 }
 
+form.edit_user {
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
 .edit_user_form {
+  // text-align: center;
   font-size: 17px;
   display: none;
-  margin-left: 5px;
+  margin-left: 100px;
+}
+
+input.user_avatar {
+  margin-left: 100px;
 }
 
 .edit_user_form input {
-  padding: 2px;
-  font-size: 17px;
+  padding: 5px;
+  font-size: 12px;
   margin-bottom: 8px;
 }
 
 .edit_form input {
-  padding: 2px;
-  font-size: 17px;
+  padding: 5px;
+  font-size: 12px;
   margin-bottom: 8px;
 }
 
