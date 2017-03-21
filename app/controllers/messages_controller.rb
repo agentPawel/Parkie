@@ -1,6 +1,14 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :verify_authenticity_token
+
+
+  def receive
+    Message.receive_message(params)
+  end
+
+
   # GET /messages
   # GET /messages.json
   def index

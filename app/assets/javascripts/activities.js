@@ -20,7 +20,7 @@ $(function(){
       }).done(function(parks){
           // console.log(parks)
           for (var i=0; i < parks.length; i++)
-          $('.activity_near_by').prepend("<div class='col-sm-6'><h2><a href='/parks/" + parks[i].id + "'>  " + parks[i].name + "</h2><h3>" + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3></div></a>");
+          $('.activity_near_by').prepend("<div class='col-sm-6'><h2><a href='/parks/" + parks[i].id + "/activities/"+ activityID+"'>  " + parks[i].name + "</h2><h3>" + parks[i].address + "</h3><h3>Distance: " + parks[i].distance.toFixed(2) + " km</h3></div></a>");
           parksList(parks)
         })
     });
