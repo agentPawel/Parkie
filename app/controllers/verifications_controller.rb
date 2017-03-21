@@ -15,8 +15,9 @@ class VerificationsController < ApplicationController
       flash[:notice] = "Welcome #{@user.username}!"
       redirect_to user_path(@user.id)
     else
-      flash.now[:error] = "Verification code is incorrect"
+      flash.now[:notice] = "Verification code is incorrect"
       render :new
+      
     end
   end
 
