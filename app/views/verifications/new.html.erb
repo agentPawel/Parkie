@@ -1,7 +1,7 @@
 <h1>
   <br>
   <br>
-  <%= @user.cell %>
+  Verify your phone number: <%=number_to_phone(@user.cell, area_code: true)%>
   <% User.send_confirmation_to(@user) %>
 </h1>
 <p>We have sent you a SMS with a code to the number above.
