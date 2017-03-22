@@ -25,10 +25,10 @@ class ActivitiesController < ApplicationController
   def activity_near_by
     @activity = Activity.find(params[:id])
     gps = params[:latitude]+','+ params[:longitude]
-    @activity.parks.near(gps, 3.9).size
+    @activity.parks.near(gps, 100).size
     respond_to do |format|
       format.json do
-        render :json => @activity.parks.near(gps, 3.9).reverse
+        render :json => @activity.parks.near(gps, 100).reverse
       end
     end
   end
